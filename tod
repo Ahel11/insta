@@ -3,3 +3,17 @@
 
 TODO:
 
+-) Generate InstagramUserRecord from instagramUserName                      ************************************
+
+-) Setup database connection local
+
+-) Begin first testrun of fetching users
+
+-) Find ways to extract mail/phone from bio
+    -) Begin refine userRecord properties to what is needed
+
+-) Setup database remote
+
+-) Begin adding and populating instagramusers remotely
+
+

@@ -1,5 +1,7 @@
 package instagramimpl;
 
+import handlers.AccountConverterHandler;
+import model.InstagramUserRecord;
 import model.MediaIdContainer;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -79,7 +81,24 @@ public class InstagramScraperHandler {
         return allUsersFound;
     }
 
+    public InstagramUserRecord getInstagramUserRecordFromName(String userName) {
+        InstagramUserRecord recordToReturn = new InstagramUserRecord();
+        AccountConverterHandler converterHandler = new AccountConverterHandler();
 
+        try {
+            HttpGet get = new HttpGet("https://www.instagram.com/" + userName);
+            HttpResponse httpResponse = httpClient.execute(get);
+            String responseStr = EntityUtils.toString(httpResponse.getEntity());
+            recordToReturn = converterHandler.convertHtmlToInstagramUserRecord(responseStr);
+
+            System.out.println(recordToReturn + "\n");
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return recordToReturn;
+    }
 
 
 

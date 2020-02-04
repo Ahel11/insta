@@ -11,30 +11,75 @@ public class InstagramUserRecord {
     private String phoneNumber;
     private String mail;
 
+    private Boolean isVerfied;
+    private String externalUrl;
+    private Long nrOfHighlights;
+    private Boolean isBusinessAccount;
+    private Boolean isRecentlyJoined;
+    private String businessCategoryName;
 
     public InstagramUserRecord() {
         this.name = "";
+        this.pk = 0;
+        this.mail = "";
+        this.isVerfied = false;
+        this.externalUrl = "";
+        this.isBusinessAccount = false;
+        this.isRecentlyJoined = false;
+        this.businessCategoryName = "";
         this.bio = "";
         this.followersCount = 0;
-        this.followersCount = 0;
+        this.followingCount = 0;
         this.mediaCount = 0;
-        this.phoneNumber = "";
-        this.mail = "";
-        this.pk = 0;
+        this.phoneNumber ="";
     }
 
-    @Override
-    public String toString() {
-        return "InstagramUserRecord{" +
-                "name='" + name + '\'' +
-                ", pk=" + pk +
-                ", bio='" + bio + '\'' +
-                ", followingCount=" + followingCount +
-                ", followersCount=" + followersCount +
-                ", mediaCount=" + mediaCount +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", mail='" + mail + '\'' +
-                '}';
+    public Boolean getVerfied() {
+        return isVerfied;
+    }
+
+    public void setVerfied(Boolean verfied) {
+        isVerfied = verfied;
+    }
+
+    public String getExternalUrl() {
+        return externalUrl;
+    }
+
+    public void setExternalUrl(String externalUrl) {
+        this.externalUrl = externalUrl;
+    }
+
+    public Long getNrOfHighlights() {
+        return nrOfHighlights;
+    }
+
+    public void setNrOfHighlights(Long nrOfHighlights) {
+        this.nrOfHighlights = nrOfHighlights;
+    }
+
+    public Boolean getBusinessAccount() {
+        return isBusinessAccount;
+    }
+
+    public void setBusinessAccount(Boolean businessAccount) {
+        isBusinessAccount = businessAccount;
+    }
+
+    public Boolean getRecentlyJoined() {
+        return isRecentlyJoined;
+    }
+
+    public void setRecentlyJoined(Boolean recentlyJoined) {
+        isRecentlyJoined = recentlyJoined;
+    }
+
+    public String getBusinessCategoryName() {
+        return businessCategoryName;
+    }
+
+    public void setBusinessCategoryName(String businessCategoryName) {
+        this.businessCategoryName = businessCategoryName;
     }
 
     public long getPk() {

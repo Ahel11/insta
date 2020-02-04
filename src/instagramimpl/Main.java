@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String args[]) {
         //InstagramHandler handler = new InstagramHandler("midoo56", "Ahmad7!" + '"');
-        testGetPictureIds();
+        testGetInstagramUserRecordFromName();
 
 
     }
@@ -21,6 +21,11 @@ public class Main {
         String randPictureId = allPictureIds.get(2);
         handler.getUsersFromPictureId(randPictureId);
 
+    }
+
+    public static void testGetInstagramUserRecordFromName() {
+        InstagramScraperHandler handler = new InstagramScraperHandler();
+        handler.getInstagramUserRecordFromName("thejasmarie");
     }
 
 }
