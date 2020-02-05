@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8429898-c7fe-4631-9059-d6d76eb84414" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/handlers/AccountConverterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/InstagramScraperHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/InstagramScraperHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Core.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instagramimpl/InstagramThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/InstagramThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/instagramimpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InstagramUserRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InstagramUserRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tod" beforeDir="false" afterPath="$PROJECT_DIR$/tod" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tod">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="112" selection-start-line="5" selection-start-column="112" selection-end-line="5" selection-end-column="112" />
+            <state relative-caret-position="205">
+              <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -38,10 +35,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/instagramimpl/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+            <state relative-caret-position="440">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#220#221#0" expanded="true" />
+                <element signature="e#246#247#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,12 +49,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="257">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-                <element signature="e#333#334#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,17 +61,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="154">
+              <caret line="125" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="method#InstagramUserHandler#0;class#InstagramScraperHandler#0" />
-                <element signature="method#getAllPictureIdsFromUser#0;class#InstagramScraperHandler#0" />
                 <element signature="method#getMediaIdFromPictureId#0;class#InstagramScraperHandler#0" />
-                <element signature="method#getUsersFromPictureId#0;class#InstagramScraperHandler#0" />
-                <element signature="method#getInstagramUserRecordFromName#0;class#InstagramScraperHandler#0" />
-                <element signature="method#extractUserNameFromScannerToken#0;class#InstagramScraperHandler#0" />
-                <element signature="method#getAllPictureIds#0;class#InstagramScraperHandler#0" />
-                <element signature="method#getAllPictureIdsFromResponse#0;class#InstagramScraperHandler#0" />
               </folding>
             </state>
           </provider>
@@ -84,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/handlers/AccountConverterHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
-              <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+              <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#extractBusinessCategoryName#0;class#AccountConverterHandler#0" />
@@ -109,23 +100,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/instagramimpl/Core.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="300">
+              <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#convertToInstaUser#0;class#InstagramHandler#0" />
+                <element signature="e#291#292#0" expanded="true" />
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="method#createThread#0;class#Core#0" />
               </folding>
             </state>
           </provider>
@@ -171,6 +152,8 @@
       <find>B3fh3SWHdqz</find>
       <find>3894748996</find>
       <find>3961897872</find>
+      <find>extractUserNameFromScannerToken</find>
+      <find>getUsersFromPictureId</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -194,14 +177,14 @@
         <option value="$PROJECT_DIR$/src/instagram/Core.java" />
         <option value="$PROJECT_DIR$/src/model/InstagramUser.java" />
         <option value="$PROJECT_DIR$/src/instagramimpl/InstagramHandler.java" />
-        <option value="$PROJECT_DIR$/src/instagramimpl/Core.java" />
-        <option value="$PROJECT_DIR$/src/instagramimpl/InstagramThread.java" />
         <option value="$PROJECT_DIR$/src/model/MediaContainer.java" />
         <option value="$PROJECT_DIR$/src/model/MeidaIdContainer.java" />
-        <option value="$PROJECT_DIR$/src/instagramimpl/Main.java" />
         <option value="$PROJECT_DIR$/src/model/InstagramUserRecord.java" />
-        <option value="$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java" />
         <option value="$PROJECT_DIR$/src/handlers/AccountConverterHandler.java" />
+        <option value="$PROJECT_DIR$/src/instagramimpl/Main.java" />
+        <option value="$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java" />
+        <option value="$PROJECT_DIR$/src/instagramimpl/InstagramThread.java" />
+        <option value="$PROJECT_DIR$/src/instagramimpl/Core.java" />
         <option value="$PROJECT_DIR$/tod" />
       </list>
     </option>
@@ -232,6 +215,12 @@
               <item name="insta" type="b2602c69:ProjectViewProjectNode" />
               <item name="insta" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="insta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="insta" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="insta" type="b2602c69:ProjectViewProjectNode" />
@@ -325,8 +314,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37919825" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.37919825" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.39869988" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.34019503" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -374,15 +363,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/instagramimpl/Main.java</url>
-          <line>20</line>
+          <line>22</line>
           <properties />
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java</url>
-          <line>93</line>
+          <line>91</line>
           <properties />
           <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/instagramimpl/Core.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -393,7 +388,29 @@
     </SUITE>
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="setValue">
+      <expression>
+        <expression-string>&quot;_.iiamshy&quot;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>temp</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>httpResponseStr.split(&quot;shortcode&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>names</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>recordToReturn</expression-string>
         <language-id>JAVA</language-id>
@@ -421,21 +438,6 @@
       </expression>
       <expression>
         <expression-string>idTokens</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>highLightNr</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>highLightToken.split(&quot;,&quot;)[0]</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>highLightToken.split(&quot;,&quot;)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -620,27 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/instagramimpl/Core.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#convertToInstaUser#0;class#InstagramHandler#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/MediaIdContainer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -672,16 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/instagramimpl/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/InstagramUserRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -693,22 +664,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/handlers/AccountConverterHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
-          <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+          <caret line="29" column="54" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#extractBusinessCategoryName#0;class#AccountConverterHandler#0" />
@@ -724,27 +683,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#InstagramHandler#0;class#InstagramHandler#0" />
+            <element signature="method#login#0;class#InstagramHandler#0" />
+            <element signature="e#348#546#0" />
+            <element signature="method#fetchUser#0;class#InstagramHandler#0" />
+            <element signature="method#convertToInstaUser#0;class#InstagramHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/instagramimpl/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramScraperHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        <state relative-caret-position="154">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="method#InstagramUserHandler#0;class#InstagramScraperHandler#0" />
-            <element signature="method#getAllPictureIdsFromUser#0;class#InstagramScraperHandler#0" />
             <element signature="method#getMediaIdFromPictureId#0;class#InstagramScraperHandler#0" />
-            <element signature="method#getUsersFromPictureId#0;class#InstagramScraperHandler#0" />
-            <element signature="method#getInstagramUserRecordFromName#0;class#InstagramScraperHandler#0" />
-            <element signature="method#extractUserNameFromScannerToken#0;class#InstagramScraperHandler#0" />
-            <element signature="method#getAllPictureIds#0;class#InstagramScraperHandler#0" />
-            <element signature="method#getAllPictureIdsFromResponse#0;class#InstagramScraperHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/instagramimpl/InstagramThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/instagramimpl/Core.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#291#292#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="method#createThread#0;class#Core#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tod">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="112" selection-start-line="5" selection-start-column="112" selection-end-line="5" selection-end-column="112" />
+        <state relative-caret-position="205">
+          <caret line="11" column="68" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
         </state>
       </provider>
     </entry>

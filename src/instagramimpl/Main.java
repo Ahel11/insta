@@ -8,10 +8,12 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String args[]) {
-        //InstagramHandler handler = new InstagramHandler("midoo56", "Ahmad7!" + '"');
-        testGetInstagramUserRecordFromName();
+        testCore();
+    }
 
-
+    public static void testCore() {
+        Core core = new Core();
+        core.getUsersOfUsers();
     }
 
     public static void testGetPictureIds() {

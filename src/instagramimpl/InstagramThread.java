@@ -4,23 +4,35 @@ import model.InstagramUserRecord;
 import org.brunocvcunha.instagram4j.requests.payload.InstagramUser;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class InstagramThread extends Thread{
 
-    private InstagramUser instagramUser;
+    InstagramScraperHandler instagramHandler;
     private ArrayList<InstagramUserRecord> users;
+    private String currName = "";
 
 
-    public InstagramThread(ArrayList<InstagramUserRecord> users) {
-        this.users = users;
+    public InstagramThread(String name) {
+        this.currName = name;
+        instagramHandler = new InstagramScraperHandler();
     }
 
     public void run() {
-        InstagramHandler handler = new InstagramHandler("astnions93", "Polin137");
-        for(InstagramUserRecord s: users) {
-            ArrayList<InstagramUserRecord> allRecords = handler.getUserFollowerList(s.getPk());
-            Core.addUsers(allRecords);
+        ArrayList<String> allPicsFromUser = instagramHandler.getAllPictureIdsFromUser(currName);
+        HashSet<String> allUsersRetrived = getAllUsersFromListOfPics(allPicsFromUser);
+        Core.addNames(allUsersRetrived);
+        Core.updateNrOfThreads(-1);
+    }
+
+    private HashSet<String> getAllUsersFromListOfPics(ArrayList<String> allPics) {
+        HashSet<String> allUsers = new HashSet<>();
+
+        for(String currPic: allPics) {
+            HashSet<String> currUsers = this.instagramHandler.getUsersFromPictureId(currPic);
+            allUsers.addAll(currUsers);
         }
+        return allUsers;
     }
 
 

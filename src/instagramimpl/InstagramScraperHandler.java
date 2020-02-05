@@ -27,10 +27,6 @@ public class InstagramScraperHandler {
     }
 
 
-
-
-
-
     //PRIMARY FUNCTIONS
 
     //Retrieves the lastest mediaIds from the user
@@ -73,7 +69,9 @@ public class InstagramScraperHandler {
 
             for(String currToken: splitted) {
                 String extractedUsername = extractUserNameFromScannerToken(currToken);
-                allUsersFound.add(extractedUsername);
+                if(isUsernameLegitimate(extractedUsername)) {
+                    allUsersFound.add(extractedUsername);
+                }
             }
         }catch (Exception e) {
             e.printStackTrace();
@@ -106,12 +104,18 @@ public class InstagramScraperHandler {
     //HELPER FUNCTIONS
 
     private String extractUserNameFromScannerToken(String token) {
-        Scanner scanner = new Scanner(token);
-        scanner.useDelimiter(",");
-        String curr = scanner.next();
+        String clean = null;
+        try {
+            Scanner scanner = new Scanner(token);
+            scanner.useDelimiter(",");
+            String curr = scanner.next();
 
-        String clean = curr.split(":")[1].replace(String.valueOf('"'),"");
-        clean = clean.replace("}", "");
+            clean = curr.split(":")[1].replace(String.valueOf('"'),"");
+            clean = clean.replace("}", "");
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return clean;
     }
 
@@ -143,6 +147,13 @@ public class InstagramScraperHandler {
             }
         }
         return allShortCodes;
+    }
+
+    private boolean isUsernameLegitimate(String name) {
+        if(name == null || name.contains(" ")) {
+            return false;
+        }
+        return true;
     }
 
 }
