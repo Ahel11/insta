@@ -1,6 +1,7 @@
-package instagramimpl;
+package handlers;
 
 import handlers.AccountConverterHandler;
+import helpers.HttpHelper;
 import model.InstagramUserRecord;
 import model.MediaIdContainer;
 import org.apache.http.HttpResponse;
@@ -17,12 +18,14 @@ import java.util.Scanner;
 public class InstagramScraperHandler {
 
     private String idFetcherUrl = "https://api.instagram.com/oembed/?url=http://instagram.com/p/";
+    private String profileUrl = "https://www.instagram.com/p/";
+
     private ArrayList<MediaIdContainer> allMediaContainers;
-    private HttpClient httpClient;
+    private HttpHelper httpHelper;
 
 
     public InstagramScraperHandler() {
-        httpClient = HttpClientBuilder.create().build();
+        this.httpHelper = new HttpHelper();
         allMediaContainers = new ArrayList<>();
     }
 
@@ -43,9 +46,7 @@ public class InstagramScraperHandler {
         pictureId = pictureId.replace(String.valueOf('"'), "");
         try {
             String mediaIdFetcherUrl = idFetcherUrl + pictureId;
-            HttpGet get = new HttpGet(mediaIdFetcherUrl);
-            HttpResponse httpResponse = httpClient.execute(get);
-            String responseStr = EntityUtils.toString(httpResponse.getEntity());
+            String responseStr = httpHelper.executeGetReq(mediaIdFetcherUrl);
             JSONObject responseJsonObj = new JSONObject(responseStr);
 
             String mediaId = responseJsonObj.getString("media_id");
@@ -61,20 +62,14 @@ public class InstagramScraperHandler {
 
     public HashSet<String> getUsersFromPictureId(String pictureId) {
         HashSet<String> allUsersFound = new HashSet<>();
-        try {
-            HttpGet get = new HttpGet("https://www.instagram.com/p/" + pictureId);
-            HttpResponse httpResponse = httpClient.execute(get);
-            String responseStr = EntityUtils.toString(httpResponse.getEntity());
-            String splitted[] = responseStr.split("username");
+        String responseStr = httpHelper.executeGetReq(profileUrl + pictureId);
+        String splitted[] = responseStr.split("username");
 
-            for(String currToken: splitted) {
-                String extractedUsername = extractUserNameFromScannerToken(currToken);
-                if(isUsernameLegitimate(extractedUsername)) {
-                    allUsersFound.add(extractedUsername);
-                }
+        for(String currToken: splitted) {
+            String extractedUsername = extractUserNameFromScannerToken(currToken);
+            if(isUsernameLegitimate(extractedUsername)) {
+                allUsersFound.add(extractedUsername);
             }
-        }catch (Exception e) {
-            e.printStackTrace();
         }
         return allUsersFound;
     }
@@ -82,18 +77,9 @@ public class InstagramScraperHandler {
     public InstagramUserRecord getInstagramUserRecordFromName(String userName) {
         InstagramUserRecord recordToReturn = new InstagramUserRecord();
         AccountConverterHandler converterHandler = new AccountConverterHandler();
-
-        try {
-            HttpGet get = new HttpGet("https://www.instagram.com/" + userName);
-            HttpResponse httpResponse = httpClient.execute(get);
-            String responseStr = EntityUtils.toString(httpResponse.getEntity());
-            recordToReturn = converterHandler.convertHtmlToInstagramUserRecord(responseStr);
-
-            System.out.println(recordToReturn + "\n");
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
+        String responseStr = httpHelper.executeGetReq("https://www.instagram.com/" + userName);
+        recordToReturn = converterHandler.convertHtmlToInstagramUserRecord(responseStr);
+        recordToReturn.setName(userName);
 
         return recordToReturn;
     }
@@ -120,18 +106,10 @@ public class InstagramScraperHandler {
     }
 
     public ArrayList<String> getAllPictureIds(String username) {
-        ArrayList<String> allPictureIds = new ArrayList<>();
+        ArrayList<String> allPictureIds;
+        String responseStr = httpHelper.executeGetReq("https://www.instagram.com/" + username);
+        allPictureIds = getAllPictureIdsFromResponse(responseStr);
 
-        try {
-            HttpGet get = new HttpGet("https://www.instagram.com/" + username);
-            HttpResponse httpResponse = httpClient.execute(get);
-
-            String responseStr = EntityUtils.toString(httpResponse.getEntity());
-            allPictureIds = getAllPictureIdsFromResponse(responseStr);
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
         return allPictureIds;
     }
 

@@ -1,7 +1,6 @@
 package instagramimpl;
 
-import model.InstagramUserRecord;
-import org.brunocvcunha.instagram4j.requests.payload.InstagramUser;
+import handlers.InstagramScraperHandler;
 
 import java.util.ArrayList;
 

@@ -165,7 +165,6 @@ public class AccountConverterHandler {
 
             return followerCount;
         }catch (Exception e) {
-            e.printStackTrace();
             return new Long(-1);
         }
     }

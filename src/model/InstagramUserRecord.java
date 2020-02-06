@@ -22,6 +22,7 @@ public class InstagramUserRecord {
         this.name = "";
         this.pk = 0;
         this.mail = "";
+        this.nrOfHighlights = new Long(0);
         this.isVerfied = false;
         this.externalUrl = "";
         this.isBusinessAccount = false;

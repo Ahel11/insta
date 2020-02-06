@@ -1,22 +1,28 @@
 package instagramimpl;
 
+import database.DatabaseHandler;
+import handlers.InstagramScraperHandler;
 import model.InstagramUserRecord;
+import org.brunocvcunha.instagram4j.requests.payload.InstagramUser;
+import org.brunocvcunha.instagram4j.requests.payload.InstagramUserReelMediaFeedResult;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 
 public class Core {
 
-    private static int nrOfThreadsAllowed = 25;
+    private static int nrOfThreadsAllowed = 28;
     private static ArrayList<String> names = new ArrayList<>();
     public static int nrOfThreads = 0;
     private InstagramScraperHandler instagramHandler = new InstagramScraperHandler();
+    private static DatabaseHandler dbHandler = new DatabaseHandler();
 
     public Core() {
-        names.add("abbyxmakeup");
+        names.add("jdennisrollins");
     }
 
-    public static synchronized void addNames(HashSet<String> users) {
+    public static void addNames(HashSet<String> users, DatabaseHandler dbHandlerInserted) {
         names.addAll(users);
 
         HashSet<String> temp = new HashSet<>();
@@ -24,7 +30,18 @@ public class Core {
             temp.add(s);
         }
 
+        for(String s: temp) {
+            dbHandlerInserted.addUserName(s);
+        }
+
         System.out.println("\nNameListSize:\t" + temp.size() + "\n");
+    }
+
+    public static synchronized void addRecords(ArrayList<InstagramUserRecord> allRecords) {
+        for(InstagramUserRecord rec: allRecords) {
+            dbHandler.addRecord(rec);
+        }
+        System.out.println("Added to db....\n");
     }
 
     public static synchronized void updateNrOfThreads(int nr) {
@@ -39,19 +56,31 @@ public class Core {
     public void getUsersOfUsers() {
 
         for(int i=0; i<100; i++) {
-            doIteration();
             if(i==0) {
-                sleepT(9000);
+                doIteration(names);
+                sleepT(20000);
             }
+            doIteration(randNames());
         }
 
     }
 
-    public void doIteration() {
-        for(int i=0; i<names.size(); i++) {
-            String currName = names.get(i);
+    public void doIteration(ArrayList<String> randList) {
+        for(int i=0; i<randList.size(); i++) {
+            String currName = randList.get(i);
             createThread(currName);
         }
+    }
+
+    private ArrayList<String> randNames() {
+        ArrayList<String> rand = new ArrayList<>();
+        for(int i=0; i<100; i++) {
+            Random r = new Random();
+            int randNr = r.nextInt()%names.size();
+            if(randNr<0)randNr*=-1;
+            rand.add(names.get(randNr));
+        }
+        return rand;
     }
 
     private void createThread(String name) {
