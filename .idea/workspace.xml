@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8429898-c7fe-4631-9059-d6d76eb84414" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/CometonGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/GuiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/Login.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/Main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/instagramimpl/MainHandl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/FetchUserFromNameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/database/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/handlers/InstagramScraperHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/handlers/InstagramScraperHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/helpers/HttpHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/helpers/HttpHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Core.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/InstagramThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/InstagramScraperHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/InstagramScraperHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/HttpHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instagramimpl/InstagramThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/threads/InstagramThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tod" beforeDir="false" afterPath="$PROJECT_DIR$/tod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/CometonGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CometonGui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GuiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GuiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Login.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui/CometonGui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="252">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="e#230#231#0" expanded="true" />
                 <element signature="e#258#259#0" expanded="true" />
@@ -89,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gui/GuiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
+            <state relative-caret-position="420">
               <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,8 +86,8 @@
         <entry file="file://$PROJECT_DIR$/src/gui/Login.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="13" column="91" selection-start-line="13" selection-start-column="91" selection-end-line="13" selection-end-column="91" />
+            <state relative-caret-position="278">
+              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -226,9 +207,9 @@
         <option value="$PROJECT_DIR$/src/instagramimpl/Main.java" />
         <option value="$PROJECT_DIR$/src/gui/Main.fxml" />
         <option value="$PROJECT_DIR$/src/database/Test.java" />
-        <option value="$PROJECT_DIR$/src/gui/GuiController.java" />
-        <option value="$PROJECT_DIR$/src/gui/Login.fxml" />
         <option value="$PROJECT_DIR$/src/gui/CometonGui.java" />
+        <option value="$PROJECT_DIR$/src/gui/Login.fxml" />
+        <option value="$PROJECT_DIR$/src/gui/GuiController.java" />
       </list>
     </option>
   </component>
@@ -414,7 +395,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19722815" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -424,7 +405,7 @@
       <window_info anchor="bottom" id="Application Servers" sideWeight="0.49840087" weight="0.23293608" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.45503792" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.45503792" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.52112675" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -857,12 +838,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/GuiController.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/CometonGui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="252">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -870,18 +852,17 @@
     <entry file="file://$PROJECT_DIR$/src/gui/Login.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="13" column="91" selection-start-line="13" selection-start-column="91" selection-end-line="13" selection-end-column="91" />
+        <state relative-caret-position="278">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/CometonGui.java">
+    <entry file="file://$PROJECT_DIR$/src/gui/GuiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="420">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
