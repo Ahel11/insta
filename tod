@@ -7,22 +7,17 @@ TODO:
 
 -) Begin first testrun of fetching users                                    ************************************
 
--) Setup database connection local
+-) Setup database connection local                                          ************************************
 
--) Handle to fetchusers, and change IP's  to continually fetch users
+-) Verify the concept works                                                 ************************************
 
--) Verify the concept works
+-) Setup GUI for client handling
 
 -) Find ways to extract mail/phone from bio
     -) Begin refine userRecord properties to what is needed
     -) Get descriptions from picture ids
 
-
-
--) Setup database remote
-
--) Begin adding and populating instagramusers remotely
+-) Setup database remote, add fetched local data to remote database
 
 
 
--) Setup GUI for client handling

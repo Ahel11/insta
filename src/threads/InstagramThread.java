@@ -1,7 +1,8 @@
-package instagramimpl;
+package threads;
 
 import database.DatabaseHandler;
 import handlers.InstagramScraperHandler;
+import instagramimpl.Core;
 import model.InstagramUserRecord;
 
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class InstagramThread extends Thread{
         //ArrayList<InstagramUserRecord> allRecords = generateInstagramRecords(allUsersRetrived);
         Core.addNames(allUsersRetrived, new DatabaseHandler());
         Core.updateNrOfThreads(-1);
+
     }
 
     public ArrayList<InstagramUserRecord> generateInstagramRecords(HashSet<String> names) {
@@ -46,6 +48,13 @@ public class InstagramThread extends Thread{
         return allUsers;
     }
 
+    private void sleepT(long ms) {
+        try {
+            Thread.sleep(ms);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

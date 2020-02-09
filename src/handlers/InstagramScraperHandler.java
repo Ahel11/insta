@@ -134,4 +134,9 @@ public class InstagramScraperHandler {
         return true;
     }
 
+    public String getUserFromName(String currName) {
+        httpHelper =  new HttpHelper();
+        String html = httpHelper.executeGetReq("https://www.instagram.com/" + currName);
+        return html;
+    }
 }

@@ -83,6 +83,54 @@ public class DatabaseHandler {
         return null;
     }
 
+    public ArrayList<InstagramUserRecord> getAllRecords() {
+        ArrayList<InstagramUserRecord> allRecords = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "SELECT * FROM instagramuser";
+            ResultSet srs = stmt.executeQuery(sqlInsertion);
+
+            while (srs.next()) {
+                InstagramUserRecord currRecord = new InstagramUserRecord();
+                String name = srs.getString("userName");
+                String bio = srs.getString("BioAndDesc");
+                long followingCount = srs.getLong("FollowingCount");
+                long followersCount = srs.getLong("FollowerCount");
+                long mediaCount = srs.getLong("MediaCount");
+                String phoneNr = srs.getString("PhoneNumber");
+                String mail = srs.getString("Mail");
+                Boolean isVerified = srs.getBoolean("IsVerified");
+                String externalUrl = srs.getString("ExternalUrl");
+                Long nrOfHighlights = srs.getLong("NrOfHighlights");
+                Boolean isBusinessAcc = srs.getBoolean("IsBusinessAccount");
+                Boolean IsRecentlyJoined = srs.getBoolean("IsRecentlyJoined");
+                String businessCategoryName = srs.getString("businessCategoryName");
+
+                currRecord.setName(name);
+                currRecord.setBio(bio);
+                currRecord.setFollowingCount(followingCount);
+                currRecord.setFollowersCount(followersCount);
+                currRecord.setMediaCount(mediaCount);
+                currRecord.setPhoneNumber(phoneNr);
+                currRecord.setMail(mail);
+                currRecord.setVerfied(isVerified);
+                currRecord.setExternalUrl(externalUrl);
+                currRecord.setNrOfHighlights(nrOfHighlights);
+                currRecord.setBusinessAccount(isBusinessAcc);
+                currRecord.setRecentlyJoined(IsRecentlyJoined);
+                currRecord.setBusinessCategoryName(businessCategoryName);
+
+                allRecords.add(currRecord);
+
+            }
+            return allRecords;
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public void addRecord(InstagramUserRecord record) {
         try {
             Statement stmt = conn.createStatement();

@@ -3,23 +3,29 @@ package instagramimpl;
 import database.DatabaseHandler;
 import handlers.InstagramScraperHandler;
 import model.InstagramUserRecord;
-import org.brunocvcunha.instagram4j.requests.payload.InstagramUser;
-import org.brunocvcunha.instagram4j.requests.payload.InstagramUserReelMediaFeedResult;
+import threads.FetchUserFromNameThread;
+import threads.InstagramThread;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
-public class Core {
+public class Core extends Thread{
 
-    private static int nrOfThreadsAllowed = 28;
-    private static ArrayList<String> names = new ArrayList<>();
+    private static int nrOfThreadsAllowed = 85;
+    public static ArrayList<String> names = new ArrayList<>();
+    public static ArrayList<Thread> threads = new ArrayList<>();
     public static int nrOfThreads = 0;
     private InstagramScraperHandler instagramHandler = new InstagramScraperHandler();
     private static DatabaseHandler dbHandler = new DatabaseHandler();
 
-    public Core() {
-        names.add("jdennisrollins");
+    //siemprebuen
+    public Core(String seed) {
+        names.add(seed);
+    }
+
+    public void run() {
+        getUsersOfUsers();
     }
 
     public static void addNames(HashSet<String> users, DatabaseHandler dbHandlerInserted) {
@@ -46,6 +52,7 @@ public class Core {
 
     public static synchronized void updateNrOfThreads(int nr) {
         nrOfThreads = nrOfThreads + (nr);
+        if(nrOfThreads < 0)nrOfThreads=0;
         System.out.println("\nNumberOfThreads..\t" + nrOfThreads);
     }
 
@@ -62,13 +69,62 @@ public class Core {
             }
             doIteration(randNames());
         }
+    }
 
+    public void fetchUserRecordsFromNames() {
+        int nrOfThreads = 50;
+        DatabaseHandler handler = new DatabaseHandler();
+        ArrayList<String> allNames = getUnfetechedUsers(handler);
+
+        int nrOfUsersPerThread = allNames.size() / nrOfThreads;
+        ArrayList<String> tempNames = new ArrayList<>();
+        int counter = 0;
+
+        for(int i=0; i<allNames.size(); i++) {
+            if(counter <= nrOfUsersPerThread) {
+                tempNames.add(allNames.get(i));
+            } else {
+                FetchUserFromNameThread t = new FetchUserFromNameThread(tempNames);
+                t.start();
+                System.out.println("Starting t:\t" + i + "\n");
+
+                tempNames = new ArrayList<>();
+                counter = 0;
+            }
+            counter++;
+        }
+
+    }
+
+    private ArrayList<String> getUnfetechedUsers(DatabaseHandler dbHandler) {
+        ArrayList<String> allUsers = dbHandler.getAllUserNames();
+        ArrayList<InstagramUserRecord> allRecords = dbHandler.getAllRecords();
+        ArrayList<String> allUnfetchedUsers = new ArrayList<>();
+        int counter = 0;
+
+        for(String currS: allUsers) {
+            counter++;
+            if(!isNameInListOfRecords(currS, allRecords)) {
+                allUnfetchedUsers.add(currS);
+            }
+        }
+
+        return allUnfetchedUsers;
+    }
+
+    private boolean isNameInListOfRecords(String name, ArrayList<InstagramUserRecord> records) {
+        for(InstagramUserRecord rec: records) {
+            if(rec.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void doIteration(ArrayList<String> randList) {
         for(int i=0; i<randList.size(); i++) {
             String currName = randList.get(i);
-            createThread(currName);
+            threads.add(createThread(currName));
         }
     }
 
@@ -83,7 +139,7 @@ public class Core {
         return rand;
     }
 
-    private void createThread(String name) {
+    private Thread createThread(String name) {
         while(true) {
             if(nrOfThreads >= nrOfThreadsAllowed) {
                 sleepT(2000);
@@ -95,6 +151,7 @@ public class Core {
         InstagramThread currT = new InstagramThread(name);
         currT.start();
         updateNrOfThreads(1);
+        return currT;
     }
 
     private static void removeDuplicates() {

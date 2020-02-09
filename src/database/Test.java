@@ -1,11 +1,14 @@
 package database;
 
+import instagramimpl.MainHandl;
 import model.InstagramUserRecord;
 
 import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 public class Test {
+
+    public static int globalBegin = 63;
 
     public static void main(String args[]) {
         DatabaseHandler handler = new DatabaseHandler();
@@ -23,14 +26,25 @@ public class Test {
         rec.setExternalUrl("aodgadgou.com");
         rec.setMail("@gadouga.com");
         rec.setNrOfHighlights(new Long(0));
-*/
+*/      runeer();
+    }
 
-        ArrayList<String> allUsers = new ArrayList<>();
-        allUsers.add("kg13133131313aer");
-        allUsers.add("dighaadgdgadgagadgag8");
-        allUsers.add("dg8adadadgagga13");
-        allUsers.add("dahdagga3131314414addaggu");
-        handler.addListOfNames(allUsers);
+    public static void runeer() {
+        while(true) {
+            MainHandl handl = new MainHandl();
+            handl.start();
+            sleepT(95000);
+            handl.stop();
+            globalBegin++;
+        }
+    }
+
+    public static void sleepT(long ms) {
+        try {
+            Thread.sleep(ms);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
