@@ -1,8 +1,10 @@
 package database;
 
 
+import model.CometonAccount;
 import model.InstagramUserRecord;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -37,6 +39,8 @@ public class DatabaseHandler {
         }
 
     }
+
+    //CRUD FOR NAMES
 
     public void addListOfNames(ArrayList<String> names) {
         try {
@@ -82,6 +86,9 @@ public class DatabaseHandler {
         }
         return null;
     }
+
+
+    //CRUD FOR InstagramUserRecords
 
     public ArrayList<InstagramUserRecord> getAllRecords() {
         ArrayList<InstagramUserRecord> allRecords = new ArrayList<>();
@@ -146,6 +153,49 @@ public class DatabaseHandler {
 
     }
 
+
+
+    //CRUD FOR COMETON ACCOUTNS
+
+    public void addCometonAccount(CometonAccount acc) {
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "INSERT INTO cometonaccount VALUES(0," + paran + acc.getUsername() + paran + ","
+                    + paran + acc.getPassword() + paran + ","
+                    + paran + acc.getMail() + paran + ","
+                    + acc.getNumberOfQueries() + ");";
+            stmt.executeUpdate(sqlInsertion);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public CometonAccount getCometonAccount(String username, String password) {
+        CometonAccount accountToReturn = null;
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "SELECT * from cometonaccount where cometonaccount.UserName = " + paran + username + paran +
+            "AND cometonaccount.Pass = " + paran + password + paran + ";";
+            ResultSet srs = stmt.executeQuery(sqlInsertion);
+
+            while (srs.next()) {
+                String usernameRetrieved = srs.getString("UserName");
+                String passwordRetrieved = srs.getString("Pass");
+                BigDecimal bigDec = new BigDecimal(srs.getString("NumberOfQueriesAllocation"));
+                String mail = srs.getString("MailAddress");
+
+                accountToReturn = new CometonAccount();
+                accountToReturn.setUsername(usernameRetrieved);
+                accountToReturn.setPassword(passwordRetrieved);
+                accountToReturn.setNumberOfQueries(bigDec);
+                accountToReturn.setMail(mail);
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return accountToReturn;
+    }
 
 
 }

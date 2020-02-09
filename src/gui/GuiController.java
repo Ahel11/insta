@@ -1,5 +1,6 @@
 package gui;
 
+import gui.controllerimpl.LoginControllerImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -22,7 +23,12 @@ public class GuiController {
     private Button LoginButtonId;
 
     public void LoginButton(ActionEvent event) {
-        if(userNameFieldId.getText().equals("user") && passwordFieldId.getText().equals("pass")) {
+        String username = userNameFieldId.getText();
+        String password = passwordFieldId.getText();
+        LoginControllerImpl loginController = new LoginControllerImpl();
+        boolean authenticationStatus = loginController.authenticate(username, password);
+
+        if(authenticationStatus) {
             statusId.setText("Login Succes");
         } else {
             statusId.setText("Login Failed");

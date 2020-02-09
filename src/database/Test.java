@@ -1,14 +1,16 @@
 package database;
 
 import instagramimpl.MainHandl;
+import model.CometonAccount;
 import model.InstagramUserRecord;
 
 import javax.xml.crypto.Data;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Test {
 
-    public static int globalBegin = 63;
+    public static int globalBegin = 95;
 
     public static void main(String args[]) {
         DatabaseHandler handler = new DatabaseHandler();
@@ -26,7 +28,9 @@ public class Test {
         rec.setExternalUrl("aodgadgou.com");
         rec.setMail("@gadouga.com");
         rec.setNrOfHighlights(new Long(0));
-*/      runeer();
+*/
+        //runeer();
+        databaseTesting();
     }
 
     public static void runeer() {
@@ -37,6 +41,11 @@ public class Test {
             handl.stop();
             globalBegin++;
         }
+    }
+
+    public static void databaseTesting() {
+        DatabaseHandler handler = new DatabaseHandler();
+        CometonAccount account = handler.getCometonAccount("jimbo", "123456");
     }
 
     public static void sleepT(long ms) {
