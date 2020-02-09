@@ -1,4 +1,4 @@
-package gui;
+package gui.controllers;
 
 import gui.controllerimpl.LoginControllerImpl;
 import javafx.event.ActionEvent;
@@ -30,9 +30,15 @@ public class GuiController {
 
         if(authenticationStatus) {
             statusId.setText("Login Succes");
+            loginController.handleLoginSuccess(LoginButtonId);
         } else {
             statusId.setText("Login Failed");
         }
+    }
+
+
+    private void launchMainScreen() {
+
     }
 
 }

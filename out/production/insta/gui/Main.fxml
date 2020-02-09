@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="gui.Main"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="439.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.SearchWindowController">
+   <children>
+      <TextArea fx:id="statusDialog" layoutX="24.0" layoutY="22.0" prefHeight="215.0" prefWidth="465.0" promptText="status " />
+      <Label layoutX="560.0" layoutY="22.0" prefHeight="49.0" prefWidth="242.0" text="Number Of Results Left">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <Label fx:id="resultsLeftLabel" layoutX="633.0" layoutY="79.0" text="15000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="searchButton" layoutX="24.0" layoutY="250.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="33.0" prefWidth="95.0" text="New Search" />
+   </children>
 </AnchorPane>
