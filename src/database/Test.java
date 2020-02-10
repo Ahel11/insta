@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class Test {
 
-    public static int globalBegin = 95;
+    public static int globalBegin = 120;
 
     public static void main(String args[]) {
         DatabaseHandler handler = new DatabaseHandler();
@@ -29,8 +29,8 @@ public class Test {
         rec.setMail("@gadouga.com");
         rec.setNrOfHighlights(new Long(0));
 */
-        //runeer();
-        databaseTesting();
+        runeer();
+        //databaseTesting();
     }
 
     public static void runeer() {

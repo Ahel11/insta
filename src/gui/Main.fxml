@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="439.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.SearchWindowController">
    <children>
-      <TextArea fx:id="statusDialog" layoutX="24.0" layoutY="22.0" prefHeight="215.0" prefWidth="465.0" promptText="status " />
+      <TextArea fx:id="statusDialog" layoutX="24.0" layoutY="22.0" prefHeight="271.0" prefWidth="507.0" promptText="status " />
       <Label layoutX="560.0" layoutY="22.0" prefHeight="49.0" prefWidth="242.0" text="Number Of Results Left">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -18,6 +18,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="searchButton" layoutX="24.0" layoutY="250.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="33.0" prefWidth="95.0" text="New Search" />
+      <Button fx:id="searchButton" layoutX="24.0" layoutY="312.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="33.0" prefWidth="95.0" text="New Search" />
    </children>
 </AnchorPane>

@@ -11,11 +11,11 @@ public class Main {
 
     public static void main(String args[]) {
         //GET INSTAGRAM USERS
-        getUsersOfUsers();
+        //getUsersOfUsers();
 
 
         //POPULATE INSTAGRAM RECORDS
-        //fetchUserRecordsFromNames();
+        fetchUserRecordsFromNames();
     }
 
     public static void fetchUserRecordsFromNames() {

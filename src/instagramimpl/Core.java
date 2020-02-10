@@ -6,9 +6,7 @@ import model.InstagramUserRecord;
 import threads.FetchUserFromNameThread;
 import threads.InstagramThread;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 public class Core extends Thread{
 
@@ -99,17 +97,32 @@ public class Core extends Thread{
     private ArrayList<String> getUnfetechedUsers(DatabaseHandler dbHandler) {
         ArrayList<String> allUsers = dbHandler.getAllUserNames();
         ArrayList<InstagramUserRecord> allRecords = dbHandler.getAllRecords();
+        ArrayList<String> allNamesInRecordsDb = getAllNamesFromRecords(allRecords);
         ArrayList<String> allUnfetchedUsers = new ArrayList<>();
+
         int counter = 0;
+        int result = 0;
+        Collections.sort(allNamesInRecordsDb);
 
         for(String currS: allUsers) {
             counter++;
-            if(!isNameInListOfRecords(currS, allRecords)) {
+            result = Collections.binarySearch(allNamesInRecordsDb, currS);
+
+            if(result < 0) {
                 allUnfetchedUsers.add(currS);
             }
+            result = 0;
         }
 
         return allUnfetchedUsers;
+    }
+
+    private ArrayList<String> getAllNamesFromRecords(List<InstagramUserRecord> allRecords) {
+        ArrayList<String> allRecordsStr = new ArrayList<>();
+        for(InstagramUserRecord rec: allRecords){
+            allRecordsStr.add(rec.getName());
+        }
+        return allRecordsStr;
     }
 
     private boolean isNameInListOfRecords(String name, ArrayList<InstagramUserRecord> records) {
