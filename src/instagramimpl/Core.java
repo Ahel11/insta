@@ -70,7 +70,7 @@ public class Core extends Thread{
     }
 
     public void fetchUserRecordsFromNames() {
-        int nrOfThreads = 50;
+        int nrOfThreads = 55;
         DatabaseHandler handler = new DatabaseHandler();
         ArrayList<String> allNames = getUnfetechedUsers(handler);
 

@@ -24,7 +24,7 @@ public class LoginControllerImpl {
     public void handleLoginSuccess(Button loginButton) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/gui/Main.fxml"));
-            Scene scene = new Scene(root, 900,580);
+            Scene scene = new Scene(root, 1400,800);
             Stage primaryStage = new Stage();
             primaryStage.setScene(scene);
             primaryStage.show();

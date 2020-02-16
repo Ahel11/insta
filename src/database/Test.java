@@ -7,30 +7,49 @@ import model.InstagramUserRecord;
 import javax.xml.crypto.Data;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Test {
 
     public static int globalBegin = 120;
 
     public static void main(String args[]) {
+        getMails();
+        //runeer();
+    }
+
+    public static void getMails() {
         DatabaseHandler handler = new DatabaseHandler();
-        /*InstagramUserRecord rec = new InstagramUserRecord();
-        rec.setName("adg");
-        rec.setBio("aigd");
-        rec.setFollowingCount(13994);
-        rec.setMediaCount(1123);
-        rec.setFollowersCount(134);
-        rec.setPk(134);
-        rec.setPhoneNumber("194");
-        rec.setBusinessCategoryName("business");
-        rec.setBusinessAccount(false);
-        rec.setVerfied(false);
-        rec.setExternalUrl("aodgadgou.com");
-        rec.setMail("@gadouga.com");
-        rec.setNrOfHighlights(new Long(0));
-*/
-        runeer();
-        //databaseTesting();
+        ArrayList<InstagramUserRecord> records = handler.getAllRecords();
+
+        ArrayList<String> allMails = new ArrayList<>();
+
+        for(InstagramUserRecord rec: records) {
+            String currMail = getMailFromBio(rec.getBio());
+            if(currMail != null) {
+                System.out.println(currMail);
+            }
+        }
+
+    }
+
+    private static String getMailFromBio(String bio) {
+        Scanner scanner = new Scanner(bio);
+
+        String currToken = "";
+        while(scanner.hasNext()) {
+            currToken = scanner.next();
+            if( currToken.contains("gmail") || currToken.contains("yahoo") || currToken.contains("outlook")) {
+                currToken = currToken.replace(String.valueOf('"'), "");
+                currToken = currToken.replace(String.valueOf(']'), "");
+                currToken = currToken.replace(String.valueOf('|'), "");
+                if(currToken.contains(":")) {
+                    return currToken.split(":")[1];
+                }
+                return currToken;
+            }
+        }
+        return null;
     }
 
     public static void runeer() {
@@ -57,3 +76,46 @@ public class Test {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

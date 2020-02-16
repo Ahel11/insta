@@ -1,23 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="439.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.SearchWindowController">
+<AnchorPane prefHeight="588.0" prefWidth="1109.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.SearchWindowController">
    <children>
-      <TextArea fx:id="statusDialog" layoutX="24.0" layoutY="22.0" prefHeight="271.0" prefWidth="507.0" promptText="status " />
-      <Label layoutX="560.0" layoutY="22.0" prefHeight="49.0" prefWidth="242.0" text="Number Of Results Left">
+      <TextArea fx:id="statusDialog" layoutX="24.0" layoutY="22.0" prefHeight="147.0" prefWidth="339.0" promptText="status " />
+      <Label layoutX="24.0" layoutY="180.0" prefHeight="49.0" prefWidth="298.0" text="Number Of Results Left">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="23.0" />
          </font></Label>
-      <Label fx:id="resultsLeftLabel" layoutX="633.0" layoutY="79.0" text="15000">
+      <Label fx:id="resultsLeftLabel" layoutX="123.0" layoutY="241.0" text="15000">
          <font>
-            <Font size="14.0" />
+            <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="searchButton" layoutX="24.0" layoutY="312.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="33.0" prefWidth="95.0" text="New Search" />
+      <AnchorPane layoutX="383.0" layoutY="22.0" prefHeight="374.0" prefWidth="714.0">
+         <children>
+            <TextField fx:id="keywordsTextField" layoutX="25.0" layoutY="33.0" prefHeight="25.0" prefWidth="340.0" />
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="19.0" prefWidth="184.0" text="Keywords">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="166.0" prefHeight="19.0" prefWidth="188.0" text="Minimum Number Of Followers">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <Label layoutX="26.0" layoutY="95.0" prefHeight="19.0" prefWidth="188.0" text="Minimum Number Of Following">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="minNumberOfFollowersTextField" layoutX="25.0" layoutY="193.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="minNumberOfFollowingTextField" layoutX="25.0" layoutY="121.0" prefHeight="25.0" prefWidth="149.0" />
+            <Button fx:id="newSearchButtonId" layoutX="258.0" layoutY="526.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="34.0" prefWidth="340.0" text="New Search" />
+            <Label layoutX="25.0" layoutY="58.0" prefHeight="25.0" prefWidth="281.0" text=" Separate keywords with the &quot;,&quot;  eg. Dog, Cat, Fish ..etc">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="250.0" text="Number Of Highlights">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
+            <TextField fx:id="minNrOfHighlights" layoutX="25.0" layoutY="275.0" />
+            <CheckBox fx:id="verifiedCheckBox" layoutX="30.0" layoutY="322.0" mnemonicParsing="false" text="Is Verified">
+               <font>
+                  <Font size="13.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="isBusinessAccount" layoutX="30.0" layoutY="388.0" mnemonicParsing="false" text="Is Business Account">
+               <font>
+                  <Font size="13.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="isRecentlyJoined" layoutX="30.0" layoutY="454.0" mnemonicParsing="false" text="Is Recently Joined">
+               <font>
+                  <Font size="13.0" />
+               </font></CheckBox>
+            <ComboBox fx:id="isBusinessCategoryComboBox" layoutX="496.0" layoutY="33.0" prefHeight="25.0" prefWidth="208.0" />
+            <Label layoutX="496.0" layoutY="15.0" prefHeight="17.0" prefWidth="159.0" text="Business Category">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="341.0" prefHeight="17.0" prefWidth="168.0" text="Only Fetch Verified Accounts">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="407.0" text="Only Fetch Business Accounts">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="57.0" layoutY="478.0" text="Only Fetch New Accounts">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="86.0" layoutY="15.0" text="Checks If Any Keywords Exists In Bio">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="isHaveMailAddress" layoutX="496.0" layoutY="106.0" mnemonicParsing="false" text="Have Mail Address">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="522.0" layoutY="125.0" prefHeight="17.0" prefWidth="221.0" text="Only Fetch Accounts With Mail In Bio">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="followingFollowerRatioTextField" layoutX="496.0" layoutY="206.0" prefHeight="25.0" prefWidth="149.0" />
+            <Label layoutX="496.0" layoutY="185.0" prefHeight="17.0" prefWidth="178.0" text="Following/Follower Ratio">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="496.0" layoutY="242.0" prefHeight="17.0" prefWidth="324.0" text="Eg, Nr Following = 1650 , Nr Followers = 1350, ratio = 1.22 ">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
