@@ -10,7 +10,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.SearchQuery;
 
-import java.awt.*;
 import java.io.File;
 
 
@@ -35,22 +34,22 @@ public class SearchWindowController {
     TextField minNumberOfFollowersTextField;
 
     @FXML
-    TextArea numberOfHighlightsTextField;
+    TextArea minNrOfHighlights;
 
     @FXML
-    Checkbox isVerifiedCheckBox;
+    CheckBox verifiedCheckBox;
 
     @FXML
-    Checkbox isBusinessAccountCheckBox;
+    CheckBox isBusinessAccount;
 
     @FXML
-    Checkbox isRecentlyJoinedCheckBox;
+    CheckBox isRecentlyJoined;
 
     @FXML
     ComboBox businessCategoryComboBox;
 
     @FXML
-    Checkbox isHaveMailAddressCheckBox;
+    CheckBox isHaveMailAddress;
 
     @FXML
     TextField followingFollowerRatioTextField;
@@ -61,6 +60,7 @@ public class SearchWindowController {
 
     public void searchButtonEvent(ActionEvent e) {
         SearchQuery query = generateQuery();
+        String SqlCommand = query.generateSql();
         System.out.println(query);
     }
 
@@ -74,13 +74,12 @@ public class SearchWindowController {
         query.setKeywords(this.keywordsTextField.getText());
         query.setMinNrFollowers(Long.parseLong(this.minNumberOfFollowersTextField.getText()));
         query.setMinNrFollowing(Long.parseLong(this.minNumberOfFollowingTextField.getText()));
-        query.setMinNrOfHighLights(Long.parseLong(this.numberOfHighlightsTextField.getText()));
-        query.setVerifiedAccount(this.isVerifiedCheckBox.getState());
-        query.setBusinessAccount(this.isBusinessAccountCheckBox.getState());
-        query.setRecentlyJoinedAccount(this.isRecentlyJoinedCheckBox.getState());
+        query.setVerifiedAccount(this.verifiedCheckBox.isSelected());
+        query.setBusinessAccount(this.isBusinessAccount.isSelected());
+        query.setRecentlyJoinedAccount(this.isRecentlyJoined.isSelected());
         query.setBusinessCategory("temp");
-        query.setHaveMailAddress(this.isHaveMailAddressCheckBox.getState());
-        query.setFollowingFollowerRatio(Long.parseLong(this.followingFollowerRatioTextField.getText()));
+        query.setHaveMailAddress(this.isHaveMailAddress.isSelected());
+        query.setFollowingFollowerRatio(Double.parseDouble(this.followingFollowerRatioTextField.getText()));
 
         return query;
     }

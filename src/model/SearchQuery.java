@@ -1,5 +1,7 @@
 package model;
 
+import org.junit.Test;
+
 public class SearchQuery {
 
     private String keywords;
@@ -11,7 +13,49 @@ public class SearchQuery {
     private Boolean isRecentlyJoinedAccount;
     private String businessCategory;
     private Boolean isHaveMailAddress;
-    private Long followingFollowerRatio;
+    private Double followingFollowerRatio;
+
+    @Test
+    public void testSearchQuery() {
+        SearchQuery query = new SearchQuery();
+        query.setFollowingFollowerRatio(new Double(1.3));
+        query.setMinNrFollowing(55L);
+        query.setMinNrFollowers(95L);
+        query.setVerifiedAccount(true);
+        query.setBusinessAccount(false);
+        query.setRecentlyJoinedAccount(false);
+        query.setBusinessCategory("Tempus");
+        query.setKeywords("tempus,inerga,mastuberga,hitlerierga");
+        query.setHaveMailAddress(true);
+
+        String sqlCommand = query.generateSql();
+        System.out.println(sqlCommand + "\n");
+
+    }
+
+    public String generateSql() {
+
+        String SQLCommand = "SELECT * FROM FROM instagramuser\nWHERE " +
+                "instagramuser.FollowingCount >= " + this.getMinNrFollowing() +
+                "\nAND instagramuser.FollowerCount >= " + this.getMinNrFollowers() +
+                "\nAND instagramuser.IsVerified = " + this.getVerifiedAccount() +
+                "\nAND instagramuser.IsBusinessAccount = " + this.getBusinessAccount() +
+                "\nAND instagramuser.IsRecentlyJoined = " + this.getRecentlyJoinedAccount() +
+                //Add mail also
+                generateKeywordStringSearch() ;
+
+        return SQLCommand;
+    }
+
+    private String generateKeywordStringSearch() {
+        String toReturn="";
+        String splittedKeyWords[] = this.getKeywords().split(",");
+        for(String currKey: splittedKeyWords) {
+            toReturn = toReturn + "\nAND instagramuser.BioAndDesc like '%" + currKey + "%'";
+        }
+        return toReturn;
+    }
+
 
     @Override
     public String toString() {
@@ -65,7 +109,7 @@ public class SearchQuery {
         return isHaveMailAddress;
     }
 
-    public Long getFollowingFollowerRatio() {
+    public Double getFollowingFollowerRatio() {
         return followingFollowerRatio;
     }
 
@@ -105,7 +149,7 @@ public class SearchQuery {
         isHaveMailAddress = haveMailAddress;
     }
 
-    public void setFollowingFollowerRatio(Long followingFollowerRatio) {
+    public void setFollowingFollowerRatio(Double followingFollowerRatio) {
         this.followingFollowerRatio = followingFollowerRatio;
     }
 }

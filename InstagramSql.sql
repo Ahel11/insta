@@ -1,6 +1,25 @@
  
 use instagram
 
+create table cometonaccount
+(
+	id INT NOT NULL AUTO_INCREMENT,
+    UserName VARCHAR(100) NOT NULL UNIQUE,
+    Pass VARCHAR(100) NOT NULL,
+    MailAddress VARCHAR(100) NOT NULL UNIQUE,
+    NumberOfQueriesAllocation VARCHAR(100) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+
+
+INSERT INTO cometonaccount VALUES(0,'rafael1993','pass1' ,'mail12@gmail.com',350000);
+
+
+
+SELECT * from cometonaccount;
+
+
 CREATE table instagramuser
 (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -23,9 +42,9 @@ CREATE table instagramuser
 
 CREATE table instagramusername
 (
-	id INT NOT NULL AUTO_INCREMENT, 
+	id INT NOT NULL AUTO_INCREMENT,
     UserName VARCHAR(60) NOT NULL UNIQUE,
-    PRIMARY KEY(id) 
+    PRIMARY KEY(id)
 );
 
 
@@ -39,6 +58,9 @@ select * from instagramuser limit 100000000
 select * from instagramusername limit 100000000
 
 
+
+
+
 select * from instagramusername where instagramusername.UserName like '%fashion%' limit 100000000
 
 
@@ -46,13 +68,21 @@ INSERT INTO instagramuser VALUES(0,0,'dewdrob26','"',661,283,0,'','',false,'null
 
 
 
-select * from instagramuser 
-where (instagramuser.BioAndDesc like '%outlook%' OR 
+select * from instagramuser
+where (instagramuser.BioAndDesc like '%outlook%' OR
 instagramuser.BioAndDesc like '%gmail%'  OR
-instagramuser.BioAndDesc like '%yahoo%') AND 
-instagramuser.BioAndDesc like '%fitness%'
+instagramuser.BioAndDesc like '%yahoo%')
+AND instagramuser.BioAndDesc like '%Blogger%'
+AND instagramuser.BioAndDesc like '%DM%'
 limit 100000000
-  
+
+
+
+select * from instagramuser
+where instagramuser.BioAndDesc like '%outlook%' OR
+instagramuser.BioAndDesc like '%gmail%'  OR
+instagramuser.BioAndDesc like '%mail%'
+limit 100000000
 
 
 
@@ -60,12 +90,15 @@ limit 100000000
 
 
 
-
-
-
-
-
-
+SELECT * FROM instagramuser
+WHERE instagramuser.FollowingCount >= 11
+AND instagramuser.FollowerCount >= 5000
+AND instagramuser.NrOfHighlights >= 0
+AND instagramuser.IsVerified = 0
+AND instagramuser.IsBusinessAccount = 0
+AND instagramuser.IsRecentlyJoined = 0
+AND instagramuser.BioAndDesc like '%shoutout%'
+AND instagramuser.BioAndDesc like '%dm%'
 
 
 

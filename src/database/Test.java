@@ -43,10 +43,17 @@ public class Test {
                 currToken = currToken.replace(String.valueOf('"'), "");
                 currToken = currToken.replace(String.valueOf(']'), "");
                 currToken = currToken.replace(String.valueOf('|'), "");
+                currToken = currToken.replace(String.valueOf('/'), "");
                 if(currToken.contains(":")) {
                     return currToken.split(":")[1];
                 }
-                return currToken;
+                if(currToken.length() > 55) return null;
+                String splitted[] = currToken.split("\\.");
+                String toReturn =  splitted[0] + ".com";
+
+                if(toReturn.contains("gmail") || currToken.contains("yahoo") || currToken.contains("outlook")) {
+                    return toReturn;
+                }
             }
         }
         return null;
