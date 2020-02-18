@@ -18,6 +18,26 @@ public class InstagramUserRecord {
     private Boolean isRecentlyJoined;
     private String businessCategoryName;
 
+
+    @Override
+    public String toString() {
+        return
+                "" + name + '\'' +
+                "," + pk +
+                ",'" + bio.replace("\n", "") + '\'' +
+                "," + followingCount +
+                "," + followersCount +
+                "," + mediaCount +
+                "," + phoneNumber + '\'' +
+                "," + mail + '\'' +
+                ",," + isVerfied +
+                ",'" + externalUrl + '\'' +
+                "," + nrOfHighlights +
+                "," + isBusinessAccount +
+                "," + isRecentlyJoined +
+                "," + businessCategoryName + '\'' ;
+    }
+
     public InstagramUserRecord() {
         this.name = "";
         this.pk = 0;

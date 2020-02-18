@@ -3,6 +3,7 @@ package gui.controllers;
 import database.DatabaseHandler;
 import gui.HolderCont;
 import gui.controllerimpl.SearchWindowControllerImpl;
+import gui.helper.FileHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import model.SearchQuery;
 import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -100,8 +102,13 @@ public class SearchWindowController implements Initializable {
         ArrayList<InstagramUserRecord> allRecs = generateRecordsBasedOnQuery(SqlCommand);
 
         updateNrOfResultsLeft(new Long(allRecs.size()));
+        saveToFile(allRecs);
 
         System.out.println(query);
+    }
+
+    private void saveToFile(List<InstagramUserRecord> allRecs) {
+        FileHandler.saveResultsToFile(allRecs);
     }
 
     private void updateNrOfResultsLeft(Long limit) {

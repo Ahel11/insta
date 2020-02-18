@@ -42,7 +42,8 @@ public class SearchQuery {
                 "\nAND instagramuser.IsVerified = " + this.getVerifiedAccount() +
                 "\nAND instagramuser.IsBusinessAccount = " + this.getBusinessAccount() +
                 "\nAND instagramuser.IsRecentlyJoined = " + this.getRecentlyJoinedAccount() +
-                "\nAND (instagramuser.FollowerCount / instagramuser.FollowingCount) > " + this.getFollowingFollowerRatio() +
+                "\nAND (instagramuser.FollowerCount / instagramuser.FollowingCount) > " + this.getFollowingFollowerRatio()
+                +  generateKeywordStringSearch() +
                 "limit " + getLimit();
                 //Add mail also
                 generateKeywordStringSearch() ;
