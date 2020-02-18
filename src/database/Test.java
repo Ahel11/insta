@@ -1,10 +1,12 @@
 package database;
 
+import gui.HolderCont;
 import instagramimpl.MainHandl;
 import model.CometonAccount;
 import model.InstagramUserRecord;
 
 import javax.xml.crypto.Data;
+import javax.xml.ws.Holder;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,8 +16,31 @@ public class Test {
     public static int globalBegin = 120;
 
     public static void main(String args[]) {
-        getMails();
+
+        int choice = 2;
+        switch (choice) {
+            case 1:
+                getMails();
+                break;
+
+            case 2:
+                testDb();
+                break;
+
+            case 3:
+                runeer();
+                break;
+
+        }
+
+
         //runeer();
+    }
+
+    public static void testDb() {
+        DatabaseHandler handler = new DatabaseHandler();
+        HolderCont.userName = "username1";
+        handler.updateNrOfQueriesLeft(3912L);
     }
 
     public static void getMails() {

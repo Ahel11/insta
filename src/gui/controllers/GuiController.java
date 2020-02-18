@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.HolderCont;
 import gui.controllerimpl.LoginControllerImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ public class GuiController {
     public void LoginButton(ActionEvent event) {
         String username = userNameFieldId.getText();
         String password = passwordFieldId.getText();
+        HolderCont.userName = username;
         LoginControllerImpl loginController = new LoginControllerImpl();
         boolean authenticationStatus = loginController.authenticate(username, password);
 

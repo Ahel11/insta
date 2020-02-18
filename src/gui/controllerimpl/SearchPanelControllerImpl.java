@@ -25,11 +25,6 @@ public class SearchPanelControllerImpl {
     }
 
 
-
-    public void onExecuteQueryButtonClicked( ) {
-        this.controller.updateStatusText("TEMPUS");
-    }
-
     public void setController(SearchWindowController controller) {
         this.controller = controller;
     }

@@ -57,7 +57,15 @@ select * from instagramuser limit 100000000
 
 select * from instagramusername limit 100000000
 
-
+SELECT * FROM  instagramuser
+WHERE instagramuser.FollowingCount >= 200
+AND instagramuser.FollowerCount >= 1555
+AND (instagramuser.FollowerCount / instagramuser.FollowingCount) > 1
+AND instagramuser.IsVerified = false
+AND instagramuser.IsBusinessAccount = false
+AND instagramuser.IsRecentlyJoined = false
+AND instagramuser.BioAndDesc like '%fashion%'
+AND instagramuser.BioAndDesc like '%fitness%'
 
 
 
@@ -97,6 +105,7 @@ AND instagramuser.NrOfHighlights >= 0
 AND instagramuser.IsVerified = 0
 AND instagramuser.IsBusinessAccount = 0
 AND instagramuser.IsRecentlyJoined = 0
+AND instagramuser.Mail != NULL
 AND instagramuser.BioAndDesc like '%shoutout%'
 AND instagramuser.BioAndDesc like '%dm%'
 
@@ -110,6 +119,9 @@ AND instagramuser.BioAndDesc like '%dm%'
 
 
 
+SELECT * FROM FROM instagramuser 
+WHERE
+instagramuser.FollowingCount >= 95AND instagramuser.IsVerified = trueAND instagramuser.IsBusinessAccount = falseAND instagramuser.IsRecentlyJoined = falseAND instagramuser.BioAndDesc like '%tempus%'AND instagramuser.BioAndDesc like '%inerga%'AND instagramuser.BioAndDesc like '%mastuberga%'AND instagramuser.BioAndDesc like '%hitlerierga%'
 
 
 

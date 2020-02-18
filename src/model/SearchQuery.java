@@ -14,6 +14,7 @@ public class SearchQuery {
     private String businessCategory;
     private Boolean isHaveMailAddress;
     private Double followingFollowerRatio;
+    private Long limit;
 
     @Test
     public void testSearchQuery() {
@@ -35,12 +36,14 @@ public class SearchQuery {
 
     public String generateSql() {
 
-        String SQLCommand = "SELECT * FROM FROM instagramuser\nWHERE " +
+        String SQLCommand = "SELECT * FROM  instagramuser\nWHERE " +
                 "instagramuser.FollowingCount >= " + this.getMinNrFollowing() +
                 "\nAND instagramuser.FollowerCount >= " + this.getMinNrFollowers() +
                 "\nAND instagramuser.IsVerified = " + this.getVerifiedAccount() +
                 "\nAND instagramuser.IsBusinessAccount = " + this.getBusinessAccount() +
                 "\nAND instagramuser.IsRecentlyJoined = " + this.getRecentlyJoinedAccount() +
+                "\nAND (instagramuser.FollowerCount / instagramuser.FollowingCount) > " + this.getFollowingFollowerRatio() +
+                "limit " + getLimit();
                 //Add mail also
                 generateKeywordStringSearch() ;
 
@@ -56,6 +59,14 @@ public class SearchQuery {
         return toReturn;
     }
 
+
+    public Long getLimit() {
+        return limit;
+    }
+
+    public void setLimit(Long limit) {
+        this.limit = limit;
+    }
 
     @Override
     public String toString() {

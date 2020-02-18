@@ -1,6 +1,7 @@
 package database;
 
 
+import gui.HolderCont;
 import model.CometonAccount;
 import model.InstagramUserRecord;
 
@@ -89,6 +90,54 @@ public class DatabaseHandler {
 
 
     //CRUD FOR InstagramUserRecords
+
+    public ArrayList<InstagramUserRecord> getUserRecordsFromQuery(String query) {
+        ArrayList<InstagramUserRecord> allRecords = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = query;
+            ResultSet srs = stmt.executeQuery(sqlInsertion);
+
+            while (srs.next()) {
+                InstagramUserRecord currRecord = new InstagramUserRecord();
+                String name = srs.getString("userName");
+                String bio = srs.getString("BioAndDesc");
+                long followingCount = srs.getLong("FollowingCount");
+                long followersCount = srs.getLong("FollowerCount");
+                long mediaCount = srs.getLong("MediaCount");
+                String phoneNr = srs.getString("PhoneNumber");
+                String mail = srs.getString("Mail");
+                Boolean isVerified = srs.getBoolean("IsVerified");
+                String externalUrl = srs.getString("ExternalUrl");
+                Long nrOfHighlights = srs.getLong("NrOfHighlights");
+                Boolean isBusinessAcc = srs.getBoolean("IsBusinessAccount");
+                Boolean IsRecentlyJoined = srs.getBoolean("IsRecentlyJoined");
+                String businessCategoryName = srs.getString("businessCategoryName");
+
+                currRecord.setName(name);
+                currRecord.setBio(bio);
+                currRecord.setFollowingCount(followingCount);
+                currRecord.setFollowersCount(followersCount);
+                currRecord.setMediaCount(mediaCount);
+                currRecord.setPhoneNumber(phoneNr);
+                currRecord.setMail(mail);
+                currRecord.setVerfied(isVerified);
+                currRecord.setExternalUrl(externalUrl);
+                currRecord.setNrOfHighlights(nrOfHighlights);
+                currRecord.setBusinessAccount(isBusinessAcc);
+                currRecord.setRecentlyJoined(IsRecentlyJoined);
+                currRecord.setBusinessCategoryName(businessCategoryName);
+
+                allRecords.add(currRecord);
+
+            }
+            return allRecords;
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     public ArrayList<InstagramUserRecord> getAllRecords() {
         ArrayList<InstagramUserRecord> allRecords = new ArrayList<>();
@@ -197,6 +246,33 @@ public class DatabaseHandler {
         return accountToReturn;
     }
 
+    public Long getNrOfQueriesLeft(String username) {
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "SELECT * from cometonaccount where cometonaccount.UserName = " + paran + username + paran;
+            ResultSet srs = stmt.executeQuery(sqlInsertion);
+
+            while (srs.next()) {
+                Long bigDec = new Long(srs.getString("NumberOfQueriesAllocation"));
+                return bigDec;
+            }
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1L;
+    }
+
+    public void updateNrOfQueriesLeft(Long nrOfQueriesLeft) {
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "update cometonaccount SET NumberOfQueriesAllocation = " + paran + nrOfQueriesLeft + paran +
+                    " where cometonaccount.username = " + paran + HolderCont.userName + paran;
+            stmt.executeUpdate(sqlInsertion);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

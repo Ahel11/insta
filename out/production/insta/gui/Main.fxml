@@ -38,8 +38,14 @@
                   <Font size="13.0" />
                </font>
             </Label>
+            <Label layoutX="26.0" layoutY="241.0" prefHeight="19.0" prefWidth="188.0" text="Number Of Results To Fetch">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
             <TextField fx:id="minNumberOfFollowersTextField" layoutX="25.0" layoutY="193.0" prefHeight="25.0" prefWidth="149.0" />
             <TextField fx:id="minNumberOfFollowingTextField" layoutX="25.0" layoutY="121.0" prefHeight="25.0" prefWidth="149.0" />
+            <TextField fx:id="resultsLimit" layoutX="25.0" layoutY="267.0" prefHeight="25.0" prefWidth="149.0" />
             <Button fx:id="newSearchButtonId" layoutX="258.0" layoutY="526.0" mnemonicParsing="false" onAction="#searchButtonEvent" prefHeight="34.0" prefWidth="340.0" text="New Search" />
             <Label layoutX="25.0" layoutY="58.0" prefHeight="25.0" prefWidth="281.0" text=" Separate keywords with the &quot;,&quot;  eg. Dog, Cat, Fish ..etc">
                <font>
