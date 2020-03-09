@@ -2,58 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8429898-c7fe-4631-9059-d6d76eb84414" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/insta.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fetchers/AddDbRecordsFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fetchers/UsersFromUserFetcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/UserToBeFetched.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selenium/SeleniumHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/AddDbRecordsFromListThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/AddUsersToDbFromListThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/FetchUsersFromUserFromListThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/helpers/AddUsersToDbThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/helpers/FetchAllUsersFromName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/threads/helpers/GenerateRecordFromNameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insta.iml" beforeDir="false" afterPath="$PROJECT_DIR$/insta.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/META-INF/insta.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/META-INF/insta.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/database/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/CometonGui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/CometonGui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/HolderCont.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/HolderCont.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/LoginControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/LoginControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/SearchPanelControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/SearchPanelControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/SearchWindowControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllerimpl/SearchWindowControllerImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllers/GuiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllers/GuiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllers/SearchPanelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllers/SearchPanelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/controllers/SearchWindowController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/controllers/SearchWindowController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/gui/helper/FileHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/gui/helper/FileHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/handlers/AccountConverterHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/handlers/AccountConverterHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/handlers/InstagramScraperHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/handlers/InstagramScraperHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/helpers/HttpHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/helpers/HttpHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Core.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Core.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/InstagramHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/InstagramHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/MainHandl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/MainHandl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/model/CometonAccount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/model/CometonAccount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/model/InstagramUserRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/model/InstagramUserRecord.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/model/MediaIdContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/model/MediaIdContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/model/SearchQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/model/SearchQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/threads/FetchUserFromNameThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/threads/FetchUserFromNameThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/insta/threads/InstagramThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/helper/FileHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/helper/FileHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/AccountConverterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/AccountConverterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/InstagramScraperHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/InstagramScraperHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/HttpHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/HttpHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Core.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Core.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/InstagramUserRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/InstagramUserRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SearchQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SearchQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/threads/FetchUserFromNameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/threads/FetchUserFromNameThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/threads/InstagramThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/threads/helpers/InstagramThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/selenium/SeleniumHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/selenium/SeleniumHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/selenium/SeleniumHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/selenium/SeleniumHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,10 +215,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="557" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583577614580" />
-    <state x="401" y="403" width="1048" height="550" key="#xdebugger.evaluate" timestamp="1583774683153">
+    <state x="-13" y="285" width="1048" height="550" key="#xdebugger.evaluate" timestamp="1583777785075">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="401" y="403" width="1048" height="550" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1583774683153" />
+    <state x="-13" y="285" width="1048" height="550" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1583777785075" />
     <state x="625" y="259" key="DetectedRootsChooserDialog" timestamp="1583673402420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -276,38 +227,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="345" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583682054993" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1583774922872">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1583777908548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922872" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1583774922872">
+    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
+    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1583777908548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922872" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1583774922872">
+    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
+    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1583777908548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922872" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1583774922872">
+    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
+    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1583777908548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922872" />
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom" timestamp="1583774922797">
+    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
+    <state width="1877" height="307" key="GridCell.Tab.1.bottom" timestamp="1583777908549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922797" />
-    <state width="1877" height="307" key="GridCell.Tab.1.center" timestamp="1583774922797">
+    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
+    <state width="1877" height="307" key="GridCell.Tab.1.center" timestamp="1583777908549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922797" />
-    <state width="1877" height="307" key="GridCell.Tab.1.left" timestamp="1583774922797">
+    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
+    <state width="1877" height="307" key="GridCell.Tab.1.left" timestamp="1583777908548">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922797" />
-    <state width="1877" height="307" key="GridCell.Tab.1.right" timestamp="1583774922797">
+    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
+    <state width="1877" height="307" key="GridCell.Tab.1.right" timestamp="1583777908549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583774922797" />
+    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
     <state width="1877" height="530" key="GridCell.Tab.2.bottom" timestamp="1583527029485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -324,10 +275,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="530" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583527029485" />
+    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1583775317252">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583775317252" />
     <state x="351" y="118" key="SettingsEditor" timestamp="1583682059106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="118" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583682059106" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1583777143944">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583777143944" />
     <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583699825325">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,10 +295,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583659802245" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1583774651381">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1583777562245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583774651381" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583777562245" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583774773343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -437,6 +396,11 @@
           <url>file://$PROJECT_DIR$/src/fetchers/AddDbRecordsFetcher.java</url>
           <line>38</line>
           <option name="timeStamp" value="245" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/selenium/SeleniumHandler.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="264" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

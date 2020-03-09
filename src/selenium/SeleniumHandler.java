@@ -2,6 +2,7 @@ package selenium;
 
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -27,7 +28,6 @@ public class SeleniumHandler {
     public void sendMails() {
         login();
         sleep(4000);
-
         sendMessages();
     }
 
@@ -40,14 +40,41 @@ public class SeleniumHandler {
             try {
                 WebElement sendMessageButton = this.driver.findElement(By.className("b-toolbar__btn"));
                 sendMessageButton.click();
+
+                //Write the email addresses
                 sleep(3000);
                 writeEmailAddresses();
+
+                //Write the title for the mail
+                sleep(1500);
+                writeTitle("Rand Title");
+
+                //Write the textbody for the mail
+                sleep(1500);
+                writeTextBody();
+
                 break;
             } catch (Exception e) {
                 nrOfFailedTimes++;
                 sleep(9000);
             }
         }
+    }
+
+    private void writeTextBody() {
+        String body = "tempBody";
+        this.driver.findElements(By.tagName("iframe")).get(1).click();
+        sleep(100);
+        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys(Keys.chord(Keys.CONTROL, "a"));
+        sleep(100);
+        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys("");
+        sleep(100);
+        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys(body);
+
+    }
+
+    private void writeTitle(String title) {
+        this.driver.findElements(By.className("b-input")).get(3).sendKeys(title);
     }
 
     private void writeEmailAddresses() {
