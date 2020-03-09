@@ -1,4 +1,4 @@
-package threads;
+package threads.helpers;
 
 import database.DatabaseHandler;
 import handlers.InstagramScraperHandler;

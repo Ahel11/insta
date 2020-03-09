@@ -1,6 +1,5 @@
 package model;
 
-import org.junit.Test;
 
 public class SearchQuery {
 
@@ -16,7 +15,6 @@ public class SearchQuery {
     private Double followingFollowerRatio;
     private Long limit;
 
-    @Test
     public void testSearchQuery() {
         SearchQuery query = new SearchQuery();
         query.setFollowingFollowerRatio(new Double(1.3));

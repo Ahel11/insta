@@ -2,25 +2,52 @@ package instagramimpl;
 
 import database.DatabaseHandler;
 import database.Test;
+import fetchers.AddDbRecordsFetcher;
+import fetchers.UsersFromUserFetcher;
 import handlers.InstagramScraperHandler;
 import model.InstagramUserRecord;
+import selenium.SeleniumHandler;
 
 import java.util.ArrayList;
 
 public class Main {
 
     public static void main(String args[]) {
-        //GET INSTAGRAM USERS
-        //getUsersOfUsers();
+
+        int choice = 3;
+
+        switch (choice) {
+            case 1:
+                fetUsersFromUsers();
+                break;
+
+            case 2:
+                fetchUserRecordsFromNames();
+                break;
+
+            case 3:
+                sendMailsSelenium();
+                break;
+        }
 
 
         //POPULATE INSTAGRAM RECORDS
-        fetchUserRecordsFromNames();
+        //fetchUserRecordsFromNames();
+    }
+
+    public static void sendMailsSelenium() {
+        SeleniumHandler handler = new SeleniumHandler();
+        handler.sendMails();
+    }
+
+    public static void fetUsersFromUsers() {
+        UsersFromUserFetcher fromUserFetcher = new UsersFromUserFetcher();
+        fromUserFetcher.startGettingUsers();
     }
 
     public static void fetchUserRecordsFromNames() {
-        Core core = new Core("");
-        core.fetchUserRecordsFromNames();
+        AddDbRecordsFetcher dbRecordsFetcher = new AddDbRecordsFetcher();
+        dbRecordsFetcher.startAddinRecords();
     }
 
     public static void getUsersOfUsers() {
@@ -29,7 +56,7 @@ public class Main {
         ArrayList<InstagramUserRecord> filtered = getFilteredRecords(allRecords);
         Core core;
 
-        for(int i = Test.globalBegin; i<filtered.size(); i++) {
+        for(int i = 425; i<filtered.size(); i++) {
             InstagramUserRecord currRec = filtered.get(i);
             refresh();
             core = new Core(currRec.getName());

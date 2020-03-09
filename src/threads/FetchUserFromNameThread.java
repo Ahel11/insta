@@ -23,16 +23,22 @@ public class FetchUserFromNameThread extends Thread {
         for(int i=0; i<allNames.size(); i++) {
             String currName = allNames.get(i);
             InstagramUserRecord record = getRecord(currName);
+            if(record == null) {
+                continue;
+            }
 
             if(record.getFollowingCount() != -1) {
                 handler.addRecord(record);
             }
-            sleepT(15000);
+            sleepT(5000);
         }
     }
 
     private InstagramUserRecord getRecord(String name) {
         String userNameHtml = instagramScraperHandler.getUserFromName(name);
+        if(userNameHtml == null) {
+            return null;
+        }
         AccountConverterHandler converterHandler = new AccountConverterHandler();
         InstagramUserRecord rec = converterHandler.convertHtmlToInstagramUserRecord(userNameHtml);
         rec.setName(name);

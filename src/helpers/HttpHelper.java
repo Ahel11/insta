@@ -26,7 +26,7 @@ public class HttpHelper {
             HttpResponse httpResponse = httpClient.execute(get);
             resp = EntityUtils.toString(httpResponse.getEntity());
         }catch (Exception e) {
-            e.printStackTrace();
+
         }
         return resp;
     }

@@ -11,9 +11,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 public class InstagramScraperHandler {
 
@@ -62,15 +60,20 @@ public class InstagramScraperHandler {
 
     public HashSet<String> getUsersFromPictureId(String pictureId) {
         HashSet<String> allUsersFound = new HashSet<>();
-        String responseStr = httpHelper.executeGetReq(profileUrl + pictureId);
-        String splitted[] = responseStr.split("username");
+        try {
+            String responseStr = httpHelper.executeGetReq(profileUrl + pictureId);
+            String splitted[] = responseStr.split("username");
 
-        for(String currToken: splitted) {
-            String extractedUsername = extractUserNameFromScannerToken(currToken);
-            if(isUsernameLegitimate(extractedUsername)) {
-                allUsersFound.add(extractedUsername);
+            for(String currToken: splitted) {
+                String extractedUsername = extractUserNameFromScannerToken(currToken);
+                if(isUsernameLegitimate(extractedUsername)) {
+                    allUsersFound.add(extractedUsername);
+                }
             }
+        } catch (Exception e) {
+
         }
+
         return allUsersFound;
     }
 
@@ -84,7 +87,15 @@ public class InstagramScraperHandler {
         return recordToReturn;
     }
 
+    public HashSet<String> getAllUsersFromListOfPics(ArrayList<String> allPics) {
+        HashSet<String> allUsers = new HashSet<>();
 
+        for(String currPic: allPics) {
+            HashSet<String> currUsers = getUsersFromPictureId(currPic);
+            allUsers.addAll(currUsers);
+        }
+        return allUsers;
+    }
 
 
     //HELPER FUNCTIONS
@@ -99,7 +110,7 @@ public class InstagramScraperHandler {
             clean = curr.split(":")[1].replace(String.valueOf('"'),"");
             clean = clean.replace("}", "");
         }catch (Exception e) {
-            e.printStackTrace();
+
         }
 
         return clean;
@@ -115,7 +126,14 @@ public class InstagramScraperHandler {
 
     public ArrayList<String> getAllPictureIdsFromResponse(String httpResponseStr) {
         ArrayList<String> allShortCodes = new ArrayList<>();
-        for(String s: httpResponseStr.split("shortcode")) {
+        String splitted[];
+        try {
+            splitted = httpResponseStr.split("shortcode");
+        } catch (Exception e) {
+            return allShortCodes;
+        }
+
+        for(String s: splitted) {
             try {
                 String currShortCode = s.split(",")[0].split(":")[1];
                 currShortCode = currShortCode.replace(String.valueOf('"'), "");

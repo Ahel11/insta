@@ -111,7 +111,6 @@ public class AccountConverterHandler {
             Long highLightNr = Long.parseLong(highLightToken.split(",")[0]);
             return highLightNr;
         }catch (Exception e) {
-            e.printStackTrace();
             return new Long(-1);
         }
 

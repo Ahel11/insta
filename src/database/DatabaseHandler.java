@@ -32,9 +32,7 @@ public class DatabaseHandler {
             Class.forName("com.mysql.jdbc.Driver");
 
             //STEP 3: Open a connection
-            System.out.println("Connecting to a selected database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            System.out.println("Connected database successfully...");
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -197,7 +195,7 @@ public class DatabaseHandler {
                     + ")";
             stmt.executeUpdate(sqlInsertion);
         }catch (Exception e) {
-            e.printStackTrace();
+
         }
 
     }

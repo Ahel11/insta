@@ -20,7 +20,7 @@ public class InstagramUserRecord {
 
 
     @Override
-    public String toString() {
+public String toString() {
         return
                 "" + name + '\'' +
                 "," + pk +

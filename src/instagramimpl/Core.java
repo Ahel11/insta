@@ -4,7 +4,7 @@ import database.DatabaseHandler;
 import handlers.InstagramScraperHandler;
 import model.InstagramUserRecord;
 import threads.FetchUserFromNameThread;
-import threads.InstagramThread;
+import threads.helpers.InstagramThread;
 
 import java.util.*;
 
@@ -60,7 +60,7 @@ public class Core extends Thread{
      */
     public void getUsersOfUsers() {
 
-        for(int i=0; i<100; i++) {
+        for(int i=0; i<300; i++) {
             if(i==0) {
                 doIteration(names);
                 sleepT(20000);
@@ -70,7 +70,7 @@ public class Core extends Thread{
     }
 
     public void fetchUserRecordsFromNames() {
-        int nrOfThreads = 55;
+        int nrOfThreads = 380;
         DatabaseHandler handler = new DatabaseHandler();
         ArrayList<String> allNames = getUnfetechedUsers(handler);
 
