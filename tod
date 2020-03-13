@@ -3,21 +3,19 @@
 
 TODO:
 
--) Generate InstagramUserRecord from instagramUserName                      ************************************
+-) Create logs for each event
 
--) Begin first testrun of fetching users                                    ************************************
+-) Store logs for each event
 
--) Setup database connection local                                          ************************************
+-) Generate default comments to utilize
 
--) Verify the concept works                                                 ************************************
+-) Randomize correct accounts to comment on
 
--) Setup GUI for client handling
+-) Randomize actions
+    *) Follow users if have < 80 followers
+    *) Comment random stuff on random posts
 
--) Find ways to extract mail/phone from bio
-    -) Begin refine userRecord properties to what is needed
-    -) Get descriptions from picture ids
-
--) Setup database remote, add fetched local data to remote database
-
+-) Update profile
+    *) Randomize updating of profile content such as phone/mail..etc
 
 

@@ -1,119 +1,137 @@
 package selenium;
 
+import model.IPLocationInfo;
+import model.MailAccount;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxBinary;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-
-import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class SeleniumHandler {
 
-    public static String url = "https://www.mail.ru";
-    private WebDriver driver;
+    private List<MailAccount> allAccounts;
+    private IPLocationInfo currIpLocation;
 
     public SeleniumHandler() {
         initialize();
     }
 
-    private void initialize() {
-        this.driver = generateDriver();
-    }
+    public void startSendingMails() {
+        currIpLocation = IPController.ipLocationInfo;
+        while(IPController.ipLocationInfo.isEmpty()) {
+            sleepT(500);
+        }
 
-    public void sendMails() {
-        login();
-        sleep(4000);
-        sendMessages();
-    }
-
-    private void sendMessages() {
-        int nrOfFailedTimes = 0;
         while(true) {
-            if(nrOfFailedTimes > 3) {
+            MailAccount currMaiL = getMailAccountFromCurrentLocation();
+
+            SeleniumUserThread currSeleniumUserThread = new SeleniumUserThread();
+            currSeleniumUserThread.setMailAccount(currMaiL);
+            currSeleniumUserThread.start();
+
+            sleepT(180 * 1000);
+            currSeleniumUserThread.abort();
+
+            checkIfIpHasChanged();
+        }
+    }
+
+    private void checkIfIpHasChanged() {
+        while(true) {
+            if(currIpLocation.equals(IPController.ipLocationInfo)) {
+                sleepT(2000);
+            } else {
                 break;
-            }
-            try {
-                WebElement sendMessageButton = this.driver.findElement(By.className("b-toolbar__btn"));
-                sendMessageButton.click();
-
-                //Write the email addresses
-                sleep(3000);
-                writeEmailAddresses();
-
-                //Write the title for the mail
-                sleep(1500);
-                writeTitle("Rand Title");
-
-                //Write the textbody for the mail
-                sleep(1500);
-                writeTextBody();
-
-                break;
-            } catch (Exception e) {
-                nrOfFailedTimes++;
-                sleep(9000);
             }
         }
     }
 
-    private void writeTextBody() {
-        String body = "tempBody";
-        this.driver.findElements(By.tagName("iframe")).get(1).click();
-        sleep(100);
-        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys(Keys.chord(Keys.CONTROL, "a"));
-        sleep(100);
-        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys("");
-        sleep(100);
-        this.driver.findElements(By.tagName("iframe")).get(1).sendKeys(body);
+    private MailAccount getMailAccountFromCurrentLocation() {
+        String currLocation = IPController.ipLocationInfo.getIpLocation();
 
-    }
+        ArrayList<MailAccount> accountsInCurrLocation = new ArrayList<>();
 
-    private void writeTitle(String title) {
-        this.driver.findElements(By.className("b-input")).get(3).sendKeys(title);
-    }
-
-    private void writeEmailAddresses() {
-        WebElement mailInputField = this.driver.findElements(By.className("compose__labels__input")).get(1);
-        for(int i=0; i<29; i++) {
-            mailInputField.sendKeys(String.valueOf(System.currentTimeMillis() + "@gmail.com\t"));
-            sleep(150);
+        //Fetch only accs that are in the current location
+        for(MailAccount currAcc: allAccounts) {
+            if (currAcc.getLocation().equalsIgnoreCase(currLocation)) {
+                accountsInCurrLocation.add(currAcc);
+            }
         }
-    }
 
-    private void login() {
-        this.driver.get(url);
-        WebElement loginMail = this.driver.findElement(By.id("mailbox__login"));
-        WebElement loginPass = this.driver.findElement(By.id("mailbox__password"));
-        WebElement loginButton = this.driver.findElement(By.id("mailbox__auth__button"));
+        Random r = new Random();
+        int index = r.nextInt()%accountsInCurrLocation.size();
+        if(index < 0) {
+            index *= -1;
+        }
 
-        loginMail.sendKeys("timofeigromik1978@mail.ru");
-        loginPass.sendKeys("sQ0PxtHO37A");
-        loginButton.click();
-    }
-
-    private WebDriver generateDriver() {
-        File pathToBinary = new File("C:\\Users\\ahmad\\Desktop\\generalFiles\\librarys\\Selenium\\2.53\\firefox\\firefox46\\firefox.exe");
-        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
-        FirefoxProfile firefoxProfile = new FirefoxProfile();
-        WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
-
-        return driver;
-    }
-
-    public static void main(String args[]) {
-        SeleniumHandler handler = new SeleniumHandler();
+        return accountsInCurrLocation.get(index);
 
     }
 
+    private void initialize() {
+        IPController controller = new IPController();
+        controller.startMonitoringIp();
+        allAccounts = getAllAccounts();
+    }
 
-    private void sleep(long ms) {
+    private List<MailAccount> getAllAccounts() {
+        ArrayList<MailAccount> allAccounts = new ArrayList<>();
+
+        MailAccount mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("timofeigromik1978@mail.ru");
+        mailAccount.setPassword("sQ0PxtHO37A");
+        mailAccount.setLocation("Romania");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("slujaevamariya1968638@mail.ru");
+        mailAccount.setPassword("fHWhbx156Xu");
+        mailAccount.setLocation("Ireland");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("albinakanushina1985377@mail.ru");
+        mailAccount.setPassword("84b5Bgy95m");
+        mailAccount.setLocation("Germany");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("vitalinasavkun92@mail.ru");
+        mailAccount.setPassword("6R5lsO1zNRHP9");
+        mailAccount.setLocation("Belgium");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("starostintrofim19992651@mail.ru");
+        mailAccount.setPassword("gciVX1TbqWQBM5");
+        mailAccount.setLocation("France");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("lavrentiiudyanskii9914@mail.ru");
+        mailAccount.setPassword("rnA7uuzvyLF3h2");
+        mailAccount.setLocation("France");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("repskiialeksei470@mail.ru");
+        mailAccount.setPassword("4TqEPof55hhj");
+        mailAccount.setLocation("France");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        mailAccount.setMailAddress("gnoevoialbert892741@mail.ru");
+        mailAccount.setPassword("NGQJx5LnyG8");
+        mailAccount.setLocation("France");
+        allAccounts.add(mailAccount);
+        mailAccount = new MailAccount();
+
+        return allAccounts;
+    }
+
+    private void sleepT(long ms) {
         try {
-
             Thread.sleep(ms);
         } catch (Exception e) {
 
@@ -121,4 +139,24 @@ public class SeleniumHandler {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

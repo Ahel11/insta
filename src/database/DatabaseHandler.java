@@ -4,10 +4,12 @@ package database;
 import gui.HolderCont;
 import model.CometonAccount;
 import model.InstagramUserRecord;
+import model.LogEvent;
 
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseHandler {
 
@@ -271,6 +273,52 @@ public class DatabaseHandler {
             e.printStackTrace();
         }
     }
+
+
+    //CRUD FOR LOGS
+
+    public void addLogEvent(LogEvent event) {
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "INSERT INTO actionLogs VALUES(0,"
+                    + paran + event.getActionEvent() + paran + ","
+                    + paran + event.getActionStatus() + paran + ","
+                    + paran + event.getIpAddress() + paran + ","
+                    + paran + event.getActionTime() + paran + ","
+                    + paran + event.getOrigUser() + paran + ","
+                    + paran + event.getTargetLink()  + paran + ");";
+            stmt.executeUpdate(sqlInsertion);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<LogEvent> getAllLogs() {
+        List<LogEvent> allLogs = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            String sqlInsertion = "SELECT * FROM actionLogs";
+            ResultSet srs = stmt.executeQuery(sqlInsertion);
+
+            while (srs.next()) {
+                LogEvent logEvent = new LogEvent();
+                logEvent.setActionEvent(srs.getString("ActionEvent"));
+                logEvent.setActionStatus(srs.getString("ActionStatus"));
+                logEvent.setIpAddress(srs.getString("IpAddress"));
+                logEvent.setActionTime(srs.getString("ActionTime"));
+                logEvent.setOrigUser(srs.getString("OrigUser"));
+                logEvent.setTargetLink(srs.getString("TargetLink"));
+                logEvent.setId(Long.parseLong(srs.getString("id")));
+                allLogs.add(logEvent);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return allLogs;
+    }
+
+
+
 
 }
 

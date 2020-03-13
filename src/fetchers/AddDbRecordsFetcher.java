@@ -13,7 +13,7 @@ import java.util.List;
 public class AddDbRecordsFetcher {
 
     public static int nrOfUserrsToAddToDb = 300;
-    public static int nrOfRecordsToAddPerRound = 900;
+    public static int nrOfRecordsToAddPerRound = 15000;
     public static long sleepTimePerRound = 3 * 1000;
 
     private static int nrOfUsersAddedToDb = 0;

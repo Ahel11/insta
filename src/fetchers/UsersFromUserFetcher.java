@@ -12,7 +12,7 @@ public class UsersFromUserFetcher {
 
     public static int sizeOfSeedarr = 45000;
     public static int nrOfFollowersMin = 2000;
-    public static int numberOfUsersToFetchPerRound = 2000;
+    public static int numberOfUsersToFetchPerRound = 350;
 
     public static int numberOfUsersToAddToDbPerRound = 10000;
     public static int numberOfUsersPerConnection = 350;

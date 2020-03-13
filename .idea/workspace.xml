@@ -2,9 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8429898-c7fe-4631-9059-d6d76eb84414" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/InstagramClient/InstagramClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InstagramClient/InstagramClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/InstagramClient/helper/InstagramClientImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/LogHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/MailTextGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/IPLocationInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/LogEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/MailAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/selenium/IPController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/selenium/SeleniumUserThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/threads/IPMonitorFetcherThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/DatabaseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/database/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/database/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/fetchers/AddDbRecordsFetcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/fetchers/AddDbRecordsFetcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/fetchers/UsersFromUserFetcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/fetchers/UsersFromUserFetcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/instagramimpl/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/insta/selenium/SeleniumHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/insta/selenium/SeleniumHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/DatabaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fetchers/AddDbRecordsFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetchers/AddDbRecordsFetcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fetchers/UsersFromUserFetcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fetchers/UsersFromUserFetcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instagramimpl/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/instagramimpl/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/selenium/SeleniumHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/selenium/SeleniumHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tod" beforeDir="false" afterPath="$PROJECT_DIR$/tod" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +34,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="266" />
+    <option name="myElementSize" value="285" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
@@ -57,7 +79,7 @@
       <recent name="D:\GeneralFiles\JavaProjects\git\insta\src\selenium" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="CometonGui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.CometonGui" />
       <module name="insta" />
@@ -146,8 +168,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeleniumHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="selenium.SeleniumHandler" />
+    <configuration name="SeleniumUserThread" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="selenium.SeleniumUserThread" />
       <module name="insta" />
       <extension name="coverage">
         <pattern>
@@ -177,13 +199,13 @@
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.SeleniumHandler" />
+      <item itemvalue="Application.SeleniumUserThread" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.SeleniumHandler" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.SeleniumUserThread" />
         <item itemvalue="Application.CometonGui" />
         <item itemvalue="Application.Main" />
       </list>
@@ -203,22 +225,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1583568459904">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1584115685719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583568459904" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584115685719" />
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1583432384001">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583432384001" />
+    <state x="669" y="288" key="#com.intellij.refactoring.memberPushDown.PushDownDialog" timestamp="1583857009940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="288" key="#com.intellij.refactoring.memberPushDown.PushDownDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583857009940" />
     <state x="557" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583577614580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="557" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583577614580" />
-    <state x="-13" y="285" width="1048" height="550" key="#xdebugger.evaluate" timestamp="1583777785075">
+    <state x="-280" y="429" width="1920" height="550" key="#xdebugger.evaluate" timestamp="1584116860903">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-13" y="285" width="1048" height="550" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1583777785075" />
+    <state x="-280" y="429" width="1920" height="550" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1584116860903" />
     <state x="625" y="259" key="DetectedRootsChooserDialog" timestamp="1583673402420">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -227,38 +253,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="345" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583682054993" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom" timestamp="1583777908548">
+    <state width="1877" height="444" key="GridCell.Tab.0.bottom" timestamp="1584116836401">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center" timestamp="1583777908548">
+    <state width="1877" height="444" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584116836401" />
+    <state width="1877" height="444" key="GridCell.Tab.0.center" timestamp="1584116836400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left" timestamp="1583777908548">
+    <state width="1877" height="444" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584116836400" />
+    <state width="1877" height="444" key="GridCell.Tab.0.left" timestamp="1584116836400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right" timestamp="1583777908548">
+    <state width="1877" height="444" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584116836400" />
+    <state width="1877" height="444" key="GridCell.Tab.0.right" timestamp="1584116836400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom" timestamp="1583777908549">
+    <state width="1877" height="444" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584116836400" />
+    <state width="1877" height="444" key="GridCell.Tab.1.bottom" timestamp="1584116837482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
-    <state width="1877" height="307" key="GridCell.Tab.1.center" timestamp="1583777908549">
+    <state width="1877" height="444" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584116837482" />
+    <state width="1877" height="444" key="GridCell.Tab.1.center" timestamp="1584116837482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
-    <state width="1877" height="307" key="GridCell.Tab.1.left" timestamp="1583777908548">
+    <state width="1877" height="444" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584116837482" />
+    <state width="1877" height="444" key="GridCell.Tab.1.left" timestamp="1584116837482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908548" />
-    <state width="1877" height="307" key="GridCell.Tab.1.right" timestamp="1583777908549">
+    <state width="1877" height="444" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584116837482" />
+    <state width="1877" height="444" key="GridCell.Tab.1.right" timestamp="1584116837482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583777908549" />
+    <state width="1877" height="444" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584116837482" />
     <state width="1877" height="530" key="GridCell.Tab.2.bottom" timestamp="1583527029485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -283,26 +309,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="351" y="118" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583682059106" />
-    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1583777143944">
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1583857911899">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583777143944" />
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583699825325">
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1583857911899" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1583947516302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583699825325" />
+    <state x="655" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583947516302" />
     <state x="657" y="118" width="606" height="804" key="find.popup" timestamp="1583659802245">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="657" y="118" width="606" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583659802245" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1583777562245">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1584040635782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583777562245" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583774773343">
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584040635782" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584115707812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583774773343" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584115707812" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -329,28 +355,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/Test.java</url>
-          <line>304</line>
+          <line>173</line>
           <option name="timeStamp" value="126" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/DatabaseHandler.java</url>
-          <line>208</line>
+          <line>210</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/Test.java</url>
-          <line>311</line>
+          <line>180</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/controllers/SearchPanelController.java</url>
           <line>16</line>
           <option name="timeStamp" value="156" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/database/Test.java</url>
-          <line>214</line>
-          <option name="timeStamp" value="169" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/gui/helper/FileHandler.java</url>
@@ -364,7 +385,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/database/Test.java</url>
-          <line>193</line>
+          <line>60</line>
           <option name="timeStamp" value="176" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -398,15 +419,48 @@
           <option name="timeStamp" value="245" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/selenium/SeleniumHandler.java</url>
-          <line>65</line>
+          <url>file://$PROJECT_DIR$/src/selenium/SeleniumUserThread.java</url>
+          <line>84</line>
           <option name="timeStamp" value="264" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/selenium/SeleniumUserThread.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="285" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/InstagramClient/InstagramClient.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/InstagramClient/InstagramClientHandler.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/InstagramClient/InstagramClient.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="311" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/database/DatabaseHandler.java</url>
+          <line>289</line>
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/database/DatabaseHandler.java</url>
+          <line>295</line>
+          <properties class="database.DatabaseHandler" method="getAllLogs">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="313" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/insta$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1581201423428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/insta$Main__1_.ic" NAME="Main (1) Coverage Results" MODIFIED="1583862636003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>instagramimpl.*</FILTER>
     </SUITE>
   </component>

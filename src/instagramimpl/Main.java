@@ -1,12 +1,13 @@
 package instagramimpl;
 
+import InstagramClient.InstagramClientHandler;
 import database.DatabaseHandler;
-import database.Test;
 import fetchers.AddDbRecordsFetcher;
 import fetchers.UsersFromUserFetcher;
 import handlers.InstagramScraperHandler;
 import model.InstagramUserRecord;
 import selenium.SeleniumHandler;
+import selenium.SeleniumUserThread;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ public class Main {
 
     public static void main(String args[]) {
 
-        int choice = 3;
+        int choice = 5;
 
         switch (choice) {
             case 1:
@@ -28,6 +29,17 @@ public class Main {
             case 3:
                 sendMailsSelenium();
                 break;
+
+            case 4:
+                //SELENIUM
+                startSendingMails();
+                break;
+
+            case 5:
+                //INSTAGRAM4j clients
+                startInstagram4jClients();
+                break;
+
         }
 
 
@@ -35,8 +47,20 @@ public class Main {
         //fetchUserRecordsFromNames();
     }
 
-    public static void sendMailsSelenium() {
+    public static void startInstagram4jClients() {
+        InstagramClientHandler handler = new InstagramClientHandler();
+        handler.startPromotingMessages();
+
+    }
+
+    public static void startSendingMails() {
         SeleniumHandler handler = new SeleniumHandler();
+        handler.startSendingMails();
+
+    }
+
+    public static void sendMailsSelenium() {
+        SeleniumUserThread handler = new SeleniumUserThread();
         handler.sendMails();
     }
 
